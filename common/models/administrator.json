@@ -1,0 +1,30 @@
+{
+  "name": "Administrator",
+  "plural": "Administrators",
+  "base": "Moderator",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "forceId": false,
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "upgrade"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "upgrade"
+    }
+  ],
+  "methods": {}
+}

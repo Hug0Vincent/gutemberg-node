@@ -1,0 +1,74 @@
+<section id="recherche">
+
+  <div class="ui container">
+    <main>
+      <div class="ui stackable grid">
+
+        <div class="row"></div>
+
+        <div class="ui six wide column" id="logo">
+          <h1>Gutemberg</h1>
+        </div>
+
+        <div class="ui ten wide column" id="search">
+
+          <form ng-submit="search()">
+
+            <input type="text" ng-model="terms" ng-required="true" placeholder="Saisissez votre recherche ici." />
+            <input type="submit" value="&#xf002;" />
+
+          </form>
+
+          <p>
+            <a href="" ng-click="advancedSearch = !advancedSearch">Recherche avancée&nbsp;<i class="icon" ng-class="(advancedSearch) ? 'close' : 'dropdown'"></i></a>
+          </p>
+
+          <div id="adv" ng-show="advancedSearch">
+
+            <input type="checkbox" ng-model="documentTypeFilter" id="docfilter" /> <label for="docfilter">Filtrer par type de document</label><br />
+            <div ng-show="documentTypeFilter">
+              <label for="doctype">N'afficher que des documents de type :</label>
+              <select id="doctype" ng-model="documentType" ng-options="t.id as i for (i,t) in documentTypes"></select>
+            </div>
+
+            <input type="checkbox" ng-model="dateFilter" id="datefilter" /> <label for="datefilter">Filtrer par date</label>
+            <div ng-show="dateFilter">
+
+              <label for="datetype">Type de filtre :</label>
+              <select ng-model="dateFilterType" id="datetype">
+                <option value="0">Date exacte</option>
+                <option value="1">Plus récent que..</option>
+                <option value="-1">Plus vieux que..</option>
+                <option value="2"> Entre deux dates</option>
+              </select><br /><br />
+
+              <div ng-if="dateFilterType == 0">
+                <label for="date0">Date : </label><input type="date" ng-model="datea" ng-change="changeDate(0, datea)" />
+              </div>
+
+              <div ng-if="dateFilterType == -1">
+                <label for="datem1">Avant le </label><input type="date" ng-model="dateb" ng-change="changeDate(0, dateb)" />
+              </div>
+
+              <div ng-if="dateFilterType == 1">
+                <label for="datep1">Après le </label><input type="date" ng-model="datec" ng-change="changeDate(0, datec)" />
+              </div>
+
+              <div ng-if="dateFilterType == 2">
+                <label for="dateb0">Du </label><input type="date" ng-model="dated" ng-change="changeDate(0, dated)" /><br />
+                <label for="dateb1">au&nbsp;&nbsp;</label><input type="date" ng-model="datee" ng-change="changeDate(1, datee)" />
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row"></div>
+
+      </div>
+    </main>
+  </div>
+
+</section>

@@ -1,0 +1,418 @@
+@font-face {
+    font-family: TravelingTypewriter;
+    src: url(../fonts/TravelingTypewriter.ttf);
+}
+
+@font-face {
+    font-family: FontAwesome;
+    src: url(../fonts/FontAwesome.ttf);
+}
+
+#loader {
+
+  display:none;
+
+  position:fixed;
+  top:0; left:0;
+
+  width:100vw;
+  height:100vh;
+
+  background: rgba(0,0,0,0.8) url(../img/loader.gif) no-repeat center center;
+  z-index:9999;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+/**
+*
+*   Documents
+*
+*/
+
+#documents .btn-readmode.disabled {
+  opacity:0.3;
+}
+
+#documents #logo {
+  position:fixed;
+  bottom:32px;
+  left:32px;
+  text-align: left;
+  font-family: TravelingTypewriter;
+  font-weight: bold;
+  z-index: 1000;
+  margin:0;
+  color:#fff;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000;
+}
+
+#documents #menu {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width:100%;
+  height:100%;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
+
+#documents #menu h2 {
+  margin-top: 0;
+}
+
+#documents #menu h4 {
+  margin-top:0;
+  color:#9FA8DA;
+  text-transform: uppercase;
+}
+
+#documents #menu>section {
+  padding:24px;
+}
+
+#documents #menu>section:nth-child(1) {
+  background: #3F51B5;
+  color:#fff;
+}
+
+#documents #menu>section:nth-child(2) {
+  height:100%;
+  overflow: auto;
+}
+
+#documents #menu>section:nth-child(1)>i {
+  float:right;
+  color:#9FA8DA;
+}
+
+#documents #menu>section:nth-child(1)>i:hover {
+  color:#fff;
+  cursor:pointer;
+}
+
+#documents #menu>section:nth-child(3)>i {
+  float:right;
+  color:#9e9e9e;
+}
+
+#documents #menu>section:nth-child(3)>i:hover {
+  color:#333;
+  cursor:pointer;
+}
+
+#documents #content nav {
+  position: absolute;
+  margin-top: 32px;
+  margin-left: 32px;
+  height: 36px;
+  z-index:9000;
+}
+
+#documents #content nav .item {
+  background: rgba(0,0,0,0.6);
+  height:100%;
+  display:inline-block;
+  color:#fff;
+  padding: 8px;
+}
+
+#documents #content nav a, #content nav a:hover {
+  color:#fff;
+  padding: 8px;
+}
+
+#documents #selection {
+  border:1px solid #3F51B5;
+  background: rgba(63, 81, 181, 0.5);
+  visibility: hidden;
+}
+
+#documents .crosshair * {
+  cursor:crosshair!important;
+}
+
+#documents .card a {
+  color:#333;
+}
+
+#documents .field.active {
+  background: red!important;
+}
+
+#documents .field.searched, #documents .field.currentSearched {
+  border:8px solid red;
+}
+
+#documents .ui.cards.scrollable {
+  /*max-height: 25vh;
+  overflow: auto;*/
+}
+
+#selectionOverlay {
+  background: rgba(0,0,255,0.5);
+}
+
+.sheet {
+  /*background: rgba(0,0,0,0.6) url(../img/loader.gif) no-repeat center center!important;*/
+}
+
+#openseadragon.left-padded {
+  margin-left : -350px;
+}
+
+.field {
+  opacity: 0.3;
+}
+
+.ui.field {
+  opacity:1!important;
+}
+
+#annotations {
+    max-height: 50vh;
+    overflow: auto;
+    margin:16px 0;
+}
+
+#annotations ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#annotations li {
+  margin: 16px;
+}
+
+/**
+*
+*   Recherche
+*
+*/
+
+#recherche {
+
+  background: black url(../img/search/background.png) no-repeat center center;
+  background-size: cover;
+
+  color:#fff;
+  overflow: auto;
+
+}
+
+#recherche a {
+  color:#a9a9a9;
+}
+
+#recherche a:hover {
+  color:#fff;
+}
+
+#recherche .container main {
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+#recherche #logo h1 {
+  text-align: left;
+  font-family: TravelingTypewriter;
+  font-size: 48px;
+  font-weight: normal;
+}
+
+#recherche h1 a {
+  color:#fff;
+}
+
+#recherche #search form {
+  border-bottom:2px solid #fff;
+}
+#recherche #search form input {
+  padding:16px 0;
+  display: inline-block;
+  border:0;
+  background: transparent;
+  font-size: 18px;
+}
+#recherche #search form input[type="text"] {
+  width:85%;
+}
+#recherche #search form input[type="submit"] {
+  width: 13%;
+  font-family: FontAwesome;
+  text-align: right;
+}
+
+#recherche section {
+  color:#333;
+}
+
+#recherche .ui.segment {
+  padding:24px;
+  max-height:436px;
+  overflow: auto;
+}
+
+#recherche .ui.cards {
+  margin-top: 16px;
+}
+
+#recherche .card a {
+  color:#555;
+}
+
+#recherche .card a:hover {
+  color:black;
+}
+
+#recherche .card .description {
+  text-align: justify;
+}
+
+#recherche .card {
+  cursor:pointer;
+}
+
+#recherche .card span {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#recherche #adv {
+  color:#a9a9a9;
+}
+
+#recherche #adv div {
+  margin-left:4px;
+  border-left:1px solid #a9a9a9;
+  padding:16px;
+}
+
+#recherche #adv select, #recherche #adv input {
+  color:#fff;
+  background: rgba(0,0,0,0.5);
+  border:1px solid #464646;
+  padding:4px;
+  margin-bottom: 4px;
+}
+
+
+/** admin */
+
+#admin #logo {
+  position:fixed;
+  bottom:32px;
+  left:32px;
+  text-align: left;
+  font-family: TravelingTypewriter;
+  font-weight: bold;
+  z-index: 1000;
+  margin:0;
+  color:#fff;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000;
+}
+
+#admin #menu {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width:100%;
+  height:100%;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
+
+#admin #menu h2 {
+  margin-top: 0;
+}
+
+#admin #menu h4 {
+  margin-top:0;
+  color:#9FA8DA;
+  text-transform: uppercase;
+}
+
+#admin #menu>section {
+  padding:24px;
+}
+
+#admin #menu>section:nth-child(1) {
+  background: #3F51B5;
+  color:#fff;
+}
+
+#admin #menu>section:nth-child(2) {
+  height:100%;
+  overflow: auto;
+}
+
+#admin #menu>section:nth-child(1)>i {
+  float:right;
+  color:#9FA8DA;
+}
+
+#admin #menu>section:nth-child(1)>i:hover {
+  color:#fff;
+  cursor:pointer;
+}
+
+#admin #menu>section:nth-child(3)>i {
+  float:right;
+  color:#9e9e9e;
+}
+
+#admin #menu>section:nth-child(3)>i:hover {
+  color:#333;
+  cursor:pointer;
+}
+
+#admin #content {
+  background: #eee;
+  padding:64px;
+}
+
+#admin #content nav {
+  margin-top: -32px;
+  margin-bottom: 32px;
+  z-index: 1000;
+  height: 36px;
+}
+
+#admin #content nav .item {
+  background: rgba(0,0,0,0.6);
+  height:100%;
+  display:inline-block;
+  color:#fff;
+  padding: 8px;
+}
+
+#admin #content nav a, #content nav a:hover {
+  color:#fff;
+  padding: 8px;
+}
+
+#admin #content .segment {
+  max-height: 25vh;
+  overflow: auto;
+}
+
+#admin #content a {
+  cursor:pointer;
+}

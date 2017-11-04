@@ -1,0 +1,40 @@
+{
+  "name": "ManualAnnotation",
+  "plural": "ManualAnnotations",
+  "base": "Annotation",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "forceId": false,
+  "properties": {
+    "date": {
+      "type": "date"
+    },
+    "username": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "User"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

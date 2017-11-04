@@ -1,0 +1,93 @@
+[
+	{
+		"name": "Décret de naturalisation",
+		"defaultContributor": "Gutemberg",
+		"sheetType": [
+			{
+				"name": "Acte de naturalisation",
+				"fieldType":[
+					{
+						"name": "Date de naissance",
+						"required": true,
+						"type": "date",
+						"number": 1
+					},
+					{
+						"name": "Nom du bénificaire principal",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Numero de dossier",
+						"required": true,
+						"type": "text",
+						"number": 1
+					}
+				]
+			},
+			{
+				"name": "Décret de naturalisation",
+				"fieldType":[
+					{
+						"name": "Catégories de demandes concernées",
+						"required": false,
+						"type": "text",
+						"number": -1
+					},
+					{
+						"name": "Catégories de personnes concernées",
+						"required": false,
+						"type": "text",
+						"number": -11
+					},
+					{
+						"name": "Cote du carton",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Date",
+						"required": false,
+						"type": "date",
+						"number": 1
+					},
+					{
+						"name": "Intitulé complet du document",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieux d'origine",
+						"required": false,
+						"type": "text",
+						"number": -1
+					},
+					{
+						"name": "Nb de pages",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Numéro du document",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Numfic",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			}
+
+		]
+	}
+
+
+]

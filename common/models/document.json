@@ -1,0 +1,30 @@
+{
+  "name": "Document",
+  "plural": "Documents",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "forceId": false,
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "pages": {
+      "type": "embedsMany",
+      "model": "Page",
+      "property": "pages"
+    },
+    "docType": {
+      "type": "belongsTo",
+      "model": "DocumentType"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

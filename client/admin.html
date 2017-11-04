@@ -1,0 +1,120 @@
+<section id="admin">
+
+  <div class="ui bottom attached segment pushable">
+    <div class="ui left wide visible sidebar">
+      <nav id="menu">
+        <section>
+          <h2>Administration</h2>
+        </section>
+        <section>
+
+          <h3>
+            <a href="#!/"><i class="home large icon"></i> Retourner à l'accueil</a>
+          </h3>
+
+          <br />
+
+        </section>
+
+        <section ng-if="user.loggedIn">
+          <i ng-click="logout()" class="Power large icon"></i>
+          <a id="profil">{{ user.name }}</a>
+        </section>
+        <section ng-if="!user.loggedIn" ng-click="login()" style="cursor:pointer">
+          <i class="Power large icon"></i>
+          <a>
+            Se connecter
+          </a>
+        </section>
+      </nav>
+    </div>
+    <div class="pusher" id="content"><div class="ui grid"><div class="twelve wide column">
+
+      <div class="ui segment">
+        <h4 class="ui header">Gestion des utilisateurs</h4>
+
+        <table class="ui celled table">
+          <thead>
+            <th>Nom</th>
+            <th>Adresse e-mail</th>
+            <th>Transformer le compte en :</th>
+            <th>Supprimer</th>
+          </thead>
+          <tr ng-repeat="u in users">
+            <td>{{ u.name }}</td>
+            <td>{{ u.email }}</td>
+            <td>
+              <a ng-click="promoteTo('Moderator', u.id)">Modérateur</a><br />
+              <a ng-click="promoteTo('Administrator', u.id)">Administrateur</a><br />
+            </td>
+            <td>
+              <a ng-click="delete('MyUser', u.id)">Supprimer</a>
+            </td>
+          </tr>
+          <tr ng-if="users.length == 0">
+            <td colspan="3">Aucun utilisateur dans la base de données</td>
+          </tr>
+        </table>
+
+      </div>
+
+      <div class="ui segment">
+        <h4 class="ui header">Gestion des modérateurs</h4>
+
+        <table class="ui celled table">
+          <thead>
+            <th>Nom</th>
+            <th>Adresse e-mail</th>
+            <th>Transformer le compte en :</th>
+            <th>Supprimer</th>
+          </thead>
+          <tr ng-repeat="u in moderators">
+            <td>{{ u.name }}</td>
+            <td>{{ u.email }}</td>
+            <td>
+              <a ng-click="promoteTo('MyUser', u.id)">Utilisateur</a><br />
+              <a ng-click="promoteTo('Administrator', u.id)">Administrateur</a><br />
+            </td>
+            <td>
+              <a ng-click="delete('Moderator', u.id)">Supprimer</a>
+            </td>
+          </tr>
+          <tr ng-if="moderators.length == 0">
+            <td colspan="3">Aucun modérateur dans la base de données</td>
+          </tr>
+        </table>
+
+      </div>
+
+      <div class="ui segment">
+        <h4 class="ui header">Gestion des administrateurs</h4>
+
+        <table class="ui celled table">
+          <thead>
+            <th>Nom</th>
+            <th>Adresse e-mail</th>
+            <th>Transformer le compte en :</th>
+            <th>Supprimer</th>
+          </thead>
+          <tr ng-repeat="u in administrators">
+            <td>{{ u.name }}</td>
+            <td>{{ u.email }}</td>
+            <td>
+              <a ng-click="promoteTo('MyUser', u.id)">Utilisateur</a><br />
+              <a ng-click="promoteTo('Moderator', u.id)">Modérateur</a><br />
+            </td>
+            <td>
+              <a ng-click="delete('Administrator', u.id)">Supprimer</a>
+            </td>
+          </tr>
+          <tr ng-if="administrators.length == 0">
+            <td colspan="3">Aucun administrateur dans la base de données</td>
+          </tr>
+        </table>
+
+      </div>
+
+    </div></div></div>
+  </div>
+
+</section>

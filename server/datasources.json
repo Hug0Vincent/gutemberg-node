@@ -1,0 +1,27 @@
+{
+  "db": {
+    "url": "mongodb://127.0.0.1/gutemberg-bdd?connectTimeoutMS=99999999999",
+    "database": "gutemberg-bdd",
+    "name": "db",
+    "connector": "mongodb"
+  },
+  "emailDs": {
+    "name": "emailDs",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "tls": {
+          "rejectUnauthorized": false
+        },
+        "auth": {
+          "user": "projetgutemberg@gmail.com",
+          "pass": "gutemberg2017"
+        }
+      }
+    ]
+  }
+}

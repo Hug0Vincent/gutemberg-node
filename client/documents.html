@@ -1,0 +1,217 @@
+<section id="documents">
+
+  <div class="ui bottom attached segment pushable">
+    <div class="ui left wide sidebar" ng-class="{'visible': showMenu}">
+      <nav id="menu">
+        <section>
+          <i ng-click="showMenu = false" title="Fermer le menu" class="Angle Double Left large icon"></i>
+          <h4>{{ document.type }}</h4>
+          <h2>{{ document.title }}</h2>
+          <h4>{{ document.date | date:'d MMMM yyyy' }}</h4>
+        </section>
+        <section>
+
+          <h3>
+            <a href="#!/"><i class="home large icon"></i> Retourner à l'accueil</a>
+          </h3>
+
+          <br />
+
+          <div class="ui search">
+              <div class="ui icon input">
+                <input class="prompt" type="text" ng-model="toSearch" placeholder="Rechercher sur cette page ..">
+                <i class="icon"></i>
+              </div>
+              &nbsp;&nbsp;<i class="search icon" ng-click="searchCurrent()"></i>
+              &nbsp;&nbsp;<span id="helpSearch" data-content="Les résultats de votre recherche seront entourés en rouge dans la visionneuse." data-position="right center"><i class="help icon"></i></span>
+          </div>
+
+          <br /><br />
+
+          <h4>Documents similaires</h4><br />
+          <div class="ui cards">
+            <div class="card" ng-if="!similarDocsLoaded">
+              <div class="content">
+                <br />
+
+                <div class="ui active inverted dimmer">
+                  <div class="ui loader"></div>
+                </div>
+
+                <br />
+              </div>
+            </div>
+            <div class="card" ng-if="similarDocsLoaded && similar_docs.length == 0">
+              <div class="content">
+                Aucun document similaire trouvé.
+              </div>
+            </div>
+            <div class="card" ng-repeat="doc in similar_docs" ng-click="goDoc(doc.id)">
+              <div class="content">
+                <div class="header">
+                  <a>{{ doc.title }}</a>
+                </div>
+                <div class="meta">
+                  {{ doc.date | date:'d MMMM yyyy' }}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div ng-if="selectedItem.type"-->
+
+            <br /><br />
+
+            <h4>{{ selectedItem.type }} sélectionné</h4>
+            <div class="ui cards">
+              <div class="card" ng-click="showPopup()">
+                <div class="content">
+                  <div class="header">
+                    <a>{{ selectedItem.title }}</a>
+                  </div>
+                  <div class="meta">
+                    {{ selectedItem.summary }}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br /><br />
+
+            <h4>{{ selectedItem.type }}<span ng-if="similar_items.length > 1">s</span> similaire<span ng-if="similar_items.length > 1">s</span></h4>
+            <div class="ui cards">
+              <div class="card" ng-if="similar_items.length == 0">
+                <div class="content">
+                  Aucun {{ selectedItem.type }} similaire trouvé.
+                </div>
+              </div>
+              <div class="card" ng-repeat="i in similar_items" ng-click="goSimilar(i.original)">
+                <div class="content">
+                  <div class="header">
+                    <a>{{ i.title }}</a>
+                  </div>
+                  <div class="meta">
+                    {{ i.summary }}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <br /><div class="ui divider"></div>
+
+          <div ng-repeat="sheetType in real_document_type.sheetTypes">
+
+            <br />
+
+            <h4>{{ sheetType.name }}<span ng-if="entities[currentPage][sheetType.name].length > 1">s</span></h4><br />
+
+            <div class="ui cards scrollable">
+              <div class="card" ng-if="entities[currentPage][sheetType.name].length == 0">
+                <div class="content">
+                  Aucun {{ sheetType.name }} sur cette page.
+                </div>
+              </div>
+              <div class="card" ng-repeat="i in entities[currentPage][sheetType.name]" ng-click="goEntity(i)">
+                <div class="content">
+                  <div class="header">
+                    <a>{{ i.title }}</a>
+                  </div>
+                  <div class="meta">
+                    {{ i.summary }}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br />
+
+          </div>
+
+        </section>
+
+        <section ng-if="user.loggedIn">
+          <i ng-click="logout()" class="Power large icon"></i>
+          <i ng-click="admin()" class="lock large icon" ng-if="user.type == 'Administrator' || user.type == 'Moderator'"></i>
+          <a id="profil">{{ user.name }}</a>
+        </section>
+        <section ng-if="!user.loggedIn" ng-click="login()" style="cursor:pointer">
+          <i class="Power large icon"></i>
+          <a>
+            Se connecter
+          </a>
+        </section>
+      </nav>
+    </div>
+    <div class="pusher" id="content" ng-class="(addMode) ? 'crosshair':''">
+
+      <h1 id="logo">Gutemberg</h1>
+
+      <nav>
+
+        <a class="item" ng-click="showMenu = true" ng-hide="showMenu"><i class="Content large icon"></i></a>
+
+        <select class="item"
+                ng-model="currentPage"
+                ng-options="k*1 as ('Page ' + (k*1+1)) for (k,p) in document._pages"
+                ng-change="osd.goToPage(currentPage)">
+        </select>
+
+        <a id="btn-previous" data-content="Page précédente" class="item"><i class="Angle Left large icon"></i></a>
+        <a id="btn-zoom-in" data-content="Agrandir" class="item"><i class="Plus large icon"></i></a>
+        <a id="btn-zoom-out" data-content="Rétrécir" class="item"><i class="Minus large icon"></i></a>
+        <a id="btn-next" data-content="Page suivante" class="item"><i class="Angle Right large icon"></i></a>
+        <a id="btn-add" ng-show="user.loggedIn" data-content="{{ (addMode) ? 'Quitter le mode d\'ajout' : 'Ajouter une fiche d\'annotation' }}" class="item" ng-click="toggleAddMode()"><i class="large icon" ng-class="(addMode) ? 'Cancel' : 'Write'"></i></a>
+
+        <br /><br />
+
+        <a class="btn-readmode item" ng-class="(readMode == 1) ? 'disabled':''" ng-click="modeAnnot()" class="item">Mode annotations</a>
+        <a class="btn-readmode item" ng-class="(readMode == 2) ? 'disabled':''" ng-click="modeConsult()" class="item">Mode consultation</a>
+        <a class="btn-readmode item" ng-class="(readMode == 0) ? 'disabled':''" ng-click="modeRead()" class="item">Mode lecture</a>
+
+      </nav>
+
+      <section id="openseadragon" ng-class="{'left-padded': showMenu}"></section>
+
+    </div>
+  </div>
+
+  <div id="addannotmodal" class="alert ui small modal transition">
+
+    <div class="header">
+      <h2>Ajouter une fiche d'annotation</h2>
+    </div>
+
+    <div class="content">
+
+      <div class="description">
+        <form class="ui form">
+          <div class="ui field">
+            <label>Type de fiche à créer : </label>
+            <select ng-options="sheettype.id as sheettype.name for sheettype in real_document_type.sheetTypes" ng-model="toCreateSheetType"></select>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="actions">
+
+        <div class="ui red cancel button" ng-click="toggleAddMode()">
+          <i class="cancel icon"></i>
+          Fermer
+        </div>
+
+        <div class="ui green approve button">
+          <i class="check icon"></i>
+          Sélectionner la zone à créer
+        </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div id="selectionOverlay"></div>

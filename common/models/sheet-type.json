@@ -1,0 +1,29 @@
+{
+  "name": "SheetType",
+  "plural": "SheetTypes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "forceId": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "docType": {
+      "type": "belongsTo",
+      "model": "DocumentType"
+    },
+    "fieldType": {
+      "type": "embedsMany",
+      "model": "FieldType"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

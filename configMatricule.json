@@ -1,0 +1,85 @@
+[
+	{
+		"name": "Registre matricule",
+		"defaultContributor": "Gutemberg",
+		"sheetType":[
+			{
+				"name": "Fiche personnelle",
+				"fieldType":[
+					{
+						"name": "Matricule",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Mobilisation",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Etat civil",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Signalement",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Canton",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Degré",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Décision",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Informations",
+						"required": false,
+						"type": "text",
+						"number": -1
+					},
+					{
+						"name": "Habitation",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Secret gauche",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Secret droit",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			}
+		]
+	}
+]

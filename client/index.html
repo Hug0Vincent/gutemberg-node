@@ -1,0 +1,197 @@
+<!DOCTYPE html5>
+<html>
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <title ng-bind="pageTitle + ' - Gutemberg'">Gutemberg</title>
+
+    <!-- Vendor -->
+
+    <link rel="stylesheet" type="text/css" href="vendor/semantic-ui/semantic.min.css" />
+
+    <script type="text/javascript" src="vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="vendor/angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="vendor/angular/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="vendor/angular/angular-locale_fr-fr.js"></script>
+    <script type="text/javascript" src="vendor/angular/angular-local-storage.min.js"></script>
+
+    <script type="text/javascript" src="vendor/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="vendor/semantic-ui/semantic.min.js"></script>
+
+    <script type="text/javascript" src="vendor/openseadragon/openseadragon.min.js"></script>
+    <script type="text/javascript" src="vendor/openseadragon/openseadragon-viewerinputhook.min.js"></script>
+
+    <!-- Gutemberg -->
+
+    <link rel="stylesheet" type="text/css" href="static/css/app.css" />
+
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <script type="text/javascript" src="static/js/app-homeController.js"></script>
+    <script type="text/javascript" src="static/js/app-documentsController.js"></script>
+    <script type="text/javascript" src="static/js/app-searchController.js"></script>
+    <script type="text/javascript" src="static/js/app-adminController.js"></script>
+
+  </head>
+
+  <body>
+
+    <div id="loader"></div>
+    <main ng-view></main>
+
+    <!-- error modal -->
+    <div id="error" class="alert ui small modal transition">
+
+      <div class="header">
+        <h2>{{ error.title }}</h2>
+      </div>
+
+      <div class="content">
+
+        <div class="description">
+          <p>{{ error.description }}</p>
+        </div>
+
+      </div>
+
+      <div class="actions" ng-if="error.canClose">
+
+
+          <div class="ui red cancel button">
+            <i class="remove icon"></i>
+            Fermer
+          </div>
+
+
+      </div>
+
+    </div>
+
+    <!--- success modal -->
+    <div id="success" class="alert ui small modal transition">
+
+      <div class="header">
+        <h2>{{ success.title }}</h2>
+      </div>
+
+      <div class="content">
+
+        <div class="description">
+          <p>{{ success.description }}</p>
+        </div>
+
+      </div>
+
+      <div class="actions" ng-if="success.canClose">
+
+
+          <div class="ui green cancel button">
+            <i class="check icon"></i>
+            Fermer
+          </div>
+
+
+      </div>
+
+    </div>
+
+    <!-- login modal -->
+    <div id="loginModal" class="alert ui small modal transition">
+
+      <div class="header">
+        <h2>Connexion</h2>
+      </div>
+
+      <div class="content">
+
+        <div class="description">
+
+          <form class="ui form" ng-submit="doLogin()">
+            <div class="ui field">
+              <label>Adresse e-mail</label>
+              <input type="email" name="mail" ng-model="user.email" placeholder="Adresse e-mail">
+            </div>
+            <div class="ui field">
+              <label>Mot de passe</label>
+              <input type="password" name="password" ng-model="user.password" placeholder="Mot de passe">
+            </div>
+          </form>
+
+          <p>Vous n'avez pas de compte ? <a ng-click="register()">Inscrivez-vous</a> !</p>
+
+        </div>
+
+      </div>
+
+      <div class="actions">
+
+        <div class="ui green button" ng-click="doLogin()">
+          <i class="check icon"></i>
+          Connexion
+        </div>
+
+        <div class="ui cancel button">
+          <i class="remove icon"></i>
+          Annuler
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- register modal -->
+    <div id="registerModal" class="alert ui small modal transition">
+
+      <div class="header">
+        <h2>Inscription</h2>
+      </div>
+
+      <div class="content">
+
+        <div class="description">
+
+          <form class="ui form" ng-submit="doLogin()">
+            <div class="ui field">
+              <label>Adresse e-mail</label>
+              <input type="email" name="mail" ng-model="user.email" placeholder="Adresse e-mail">
+            </div>
+            <div class="ui field">
+              <label>Mot de passe</label>
+              <input type="password" name="password" ng-model="user.password" placeholder="Mot de passe">
+            </div>
+            <div class="ui field">
+              <label>Nom</label>
+              <input type="text" name="name" ng-model="user.name" placeholder="Nom">
+            </div>
+            <div class="ui field">
+              <label>Emploi</label>
+              <input type="text" name="job" ng-model="user.job" placeholder="Emploi">
+            </div>
+          </form>
+
+          <p>Vous avez déjà un compte ? <a ng-click="login()">Connectez-vous</a> !</p>
+
+        </div>
+
+      </div>
+
+      <div class="actions">
+
+        <div class="ui green button" ng-click="doRegister()">
+          <i class="check icon"></i>
+          Inscription
+        </div>
+
+        <div class="ui cancel button">
+          <i class="remove icon"></i>
+          Annuler
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

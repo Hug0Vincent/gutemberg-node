@@ -1,0 +1,38 @@
+[
+	{
+		"name": "Presse ancienne",
+		"defaultContributor": "Gutemberg",
+		"sheetType": [
+			{
+				"name": "Article",
+				"fieldType":[
+					{
+						"name": "Titre",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Paragraphe",
+						"required": false,
+						"type": "text",
+						"number": -1
+					}
+
+				]
+			},
+			{
+				"name": "Titre de journal",
+				"fieldType":[
+					{
+						"name": "Titre",
+						"required": true,
+						"type": "text",
+						"number": 1
+					}
+
+				]
+			}
+		]
+	}
+]

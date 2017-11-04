@@ -1,0 +1,43 @@
+{
+  "name": "Area",
+  "plural": "Areas",
+  "base": "Input",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "forceId": false,
+  "properties": {
+    "modifiable": {
+      "type": "boolean"
+    },
+    "name": {
+      "type": "string"
+    },
+    "points": {
+      "type": "array"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "annotations": {
+      "type": "embedsMany",
+      "model": "Annotation",
+      "property": "annotations",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    },
+    "sheet": {
+      "type": "belongsTo",
+      "model": "Sheet"
+    },
+    "fieldtype": {
+      "type": "belongsTo",
+      "model": "FieldType"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

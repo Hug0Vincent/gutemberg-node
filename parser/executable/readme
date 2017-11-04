@@ -1,0 +1,2 @@
+Pour parser des documents, les placer dans le dossier "docs/" puis lancer le parser (.sh ou .bat)
+Les fichiers sont générés dans le dossier "output/".

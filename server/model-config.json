@@ -1,0 +1,108 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Document": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Page": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Sheet": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Area": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Annotation": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ManualAnnotation": {
+    "dataSource": "db",
+    "public": true
+  },
+  "AutomaticAnnotation": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Input": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Point": {
+    "dataSource": "db",
+    "public": true
+  },
+  "DocumentType": {
+    "dataSource": "db",
+    "public": true
+  },
+  "FieldType": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ReadList": {
+    "dataSource": "db",
+    "public": true
+  },
+  "SheetType": {
+    "dataSource": "db",
+    "public": true
+  },
+  "MyUser": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
+  },
+  "Email": {
+    "dataSource": "emailDs"
+  },
+  "Administrator": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Moderator": {
+    "dataSource": "db",
+    "public": true
+  }
+}

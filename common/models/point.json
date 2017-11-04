@@ -1,0 +1,32 @@
+{
+  "name": "Point",
+  "plural": "Points",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "forceId": false,
+  "properties": {
+    "x": {
+      "type": "number",
+      "required": true
+    },
+    "y": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "parentInput": {
+      "type": "belongsTo",
+      "polymorphic": {
+        "foreignKey": "parentId",
+        "discriminator": "parentInput"
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,42 @@
+{
+  "name": "ReadList",
+  "plural": "ReadLists",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "forceId": false,
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date"
+    },
+    "modifiable": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "annotations": {
+      "type": "hasAndBelongsToMany",
+      "model": "Annotation",
+      "foreignKey": ""
+    },
+    "pages": {
+      "type": "hasAndBelongsToMany",
+      "model": "Page",
+      "foreignKey": ""
+    },
+    "myuser": {
+      "type": "belongsTo",
+      "model": "MyUser",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

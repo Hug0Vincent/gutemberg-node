@@ -1,0 +1,49 @@
+{
+  "name": "Sheet",
+  "plural": "Sheets",
+  "base": "Input",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "forceId": false,
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "points": {
+      "type": "array"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "parent": {
+      "type": "belongsTo",
+      "polymorphic": {
+        "foreignKey": "parentId",
+        "discriminator": "parent"
+      }
+    },
+    "sheets": {
+      "type": "embedsMany",
+      "model": "Sheet",
+      "polymorphic": "parent"
+    },
+    "areas": {
+      "type": "embedsMany",
+      "model": "Area",
+      "property": "areas"
+    },
+    "readlist": {
+      "type": "hasAndBelongsToMany",
+      "model": "ReadList",
+      "property": "readlists"
+    },
+    "sheetType": {
+      "type": "belongsTo",
+      "model": "SheetType"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

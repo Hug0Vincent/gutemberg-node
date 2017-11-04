@@ -1,0 +1,41 @@
+{
+  "name": "FieldType",
+  "plural": "FieldTypes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "forceId": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "required": {
+      "type": "boolean",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "number": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "areas": {
+      "type": "hasMany",
+      "model": "Area"
+    },
+    "sheetType": {
+      "type": "belongsTo",
+      "model": "SheetType"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

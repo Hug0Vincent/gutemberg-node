@@ -34,7 +34,6 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
   /** go to cliked entity */
   $scope.goEntity = function(e) {
 
-    console.log("E: ", e);
     $scope.currentSheet = e.sheet;
     var ids = e.id.split("-");
     $scope.currentId = "field-" + ids[1] + "-" + ids[2] + "-0";
@@ -679,7 +678,6 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
         //$scope.osd.viewport.fitBoundsWithConstraints($scope.osd.viewport.imageToViewportRectangle(toZoom), true);
 
         $scope.currentArea = _area;
-        console.log("SHEET:", _sheet);
         $scope.currentSheet = _sheet;
         $scope.currentId = element.id;
 
@@ -1044,7 +1042,6 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
   $scope.popupContent = function() {
 
     console.log("popupContent");
-    console.log("CURRENT: ", $scope.currentSheet);;
 
     var html = `<div class="header"><h3>${$scope.currentSheet.name}</h3></div><div id="annotations">
       <div class="ui feed">`;
@@ -1061,15 +1058,13 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
     }
 
     for(var x in sheetType.fieldTypes) {
-      console.log("SHHET TYPE ", sheetType);
       selected.fieldTypes.push(sheetType.fieldTypes[x].name);
       selected.areas[sheetType.fieldTypes[x].name] = [];
     }
 
     for(var x in $scope.currentSheet._areas) {
       var a = $scope.currentSheet._areas[x];
-      console.log("SELECTED ", selected);
-      console.log("A ", a);
+      console.log(a);
       selected.areas[a.name].push(a);
     }
 

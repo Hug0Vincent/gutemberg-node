@@ -89,46 +89,55 @@ app.controller("searchController", function($scope, $rootScope, $location, $rout
 
   $scope.results = function(r) {
 
-    tmp_results = [];
-    for(var i in DOCUMENT_TYPES) tmp_results[i] = { annots:[], docs:[] };
+    if (r.hits.total > 0) { // Checks if there is at least 1 document returned
 
-    for(var i = 0; i < r.hits.hits.doc.length; i++) {
+      tmp_results = [];
+      for(var i in DOCUMENT_TYPES) tmp_results[i] = { annots:[], docs:[] };
 
-      var doc = r.hits.hits.doc[i];
-      tmp_results[doctypeFromId(doc.type)].docs.push(doc);
+      for(var i = 0; i < r.hits.hits.doc.length; i++) {
 
-    }
-
-    var split_terms = $scope.terms.split(" ");
-
-    for(var i = 0; i < r.hits.hits.annot.length; i++) {
-
-      var hit = r.hits.hits.annot[i];
-
-      var word_pos = 0;
-
-      for(x in split_terms) {
-
-        word_pos = hit._source.text.indexOf(split_terms[x]);
-        if(word_pos != -1) break;
+        var doc = r.hits.hits.doc[i];
+        tmp_results[doctypeFromId(doc.type)].docs.push(doc);
 
       }
 
-      var begin = Math.max(word_pos - 80, 0);
-      var end = Math.min(hit._source.text.length, word_pos + 80);
+      var split_terms = $scope.terms.split(" ");
 
-      hit.source = hit._source.text.slice(begin, end);
-      for(var t in split_terms) hit.source = hit.source.replace(new RegExp("(" + split_terms[t] + ")", 'g'), '<span>$1</span>');
+      for(var i = 0; i < r.hits.hits.annot.length; i++) {
 
-      if(begin != 0) hit.source = "..." + hit.source;
-      if(end != hit._source.text.length) hit.source = hit.source + "...";
+        var hit = r.hits.hits.annot[i];
 
-      tmp_results[hit.document_type].annots.push(hit);
+        var word_pos = 0;
+
+        for(x in split_terms) {
+
+          word_pos = hit._source.text.indexOf(split_terms[x]);
+          if(word_pos != -1) break;
+
+        }
+
+        var begin = Math.max(word_pos - 80, 0);
+        var end = Math.min(hit._source.text.length, word_pos + 80);
+
+        hit.source = hit._source.text.slice(begin, end);
+        for(var t in split_terms) hit.source = hit.source.replace(new RegExp("(" + split_terms[t] + ")", 'g'), '<span>$1</span>');
+
+        if(begin != 0) hit.source = "..." + hit.source;
+        if(end != hit._source.text.length) hit.source = hit.source + "...";
+
+        tmp_results[hit.document_type].annots.push(hit);
+
+      }
+
+      $scope.nb = r.hits.hits.annot.length + r.hits.hits.doc.length;
+      $scope._results = tmp_results;
+
+    } else {
+
+      $scope.nb = 0;
+      $scope._results = null;
 
     }
-
-    $scope.nb = r.hits.hits.annot.length + r.hits.hits.doc.length;
-    $scope._results = tmp_results;
 
   };
 

@@ -40,9 +40,12 @@ module.exports = function(Document) {
       var sheet = params[7];
       var area = params[8];
 
-      if(data[idDoc].pages[idPag].sheetsIndex[sheetId].listInputs[inputId].annotations[annotId].type=='annotationAutomatic') {
+      if(data[idDoc].pages[idPag].sheetsIndex[sheetId].listInputs[inputId].annotations[annotId].type == 'annotationAutomatic') {
 
-        promises.push(AutomaticAnnotation.create({modifiable:data[idDoc].pages[idPag].sheetsIndex[sheetId].listInputs[inputId].annotations[annotId].modifiable, text:data[idDoc].pages[idPag].sheetsIndex[sheetId].listInputs[inputId].annotations[annotId].textAuto}).then(function(annot){
+        promises.push(AutomaticAnnotation.create({
+          modifiable: data[idDoc].pages[idPag].sheetsIndex[sheetId].listInputs[inputId].annotations[annotId].modifiable,
+          text: data[idDoc].pages[idPag].sheetsIndex[sheetId].listInputs[inputId].annotations[annotId].textAuto
+        }).then(function(annot) {
 
           count.annotations++;
 
@@ -56,7 +59,7 @@ module.exports = function(Document) {
 
       }
 
-    };
+    }; //end addAnnot
 
     var addInput = function(params) {
 
@@ -68,13 +71,23 @@ module.exports = function(Document) {
       var pag = params[5];
       var sheet = params[6];
 
-      if(data[idDoc].pages[idPag].sheetsIndex[sheetId].listInputs[inputId].type=="area") {
-          promises.push(DocumentType.find({where: {name:data[idDoc].type}}).then(function(listDoc){
-            if(listDoc.length > 0){
-              return SheetType.find({where: {name:data[idDoc].pages[idPag].sheetsIndex[sheetId].name, docTypeId: listDoc[0].id}}).then(function(listSheet){
+      if(data[idDoc].pages[idPag].sheetsIndex[sheetId].listInputs[inputId].type == "area") {
+
+          promises.push(DocumentType.find({where: {name:data[idDoc].type}}).then(function(listDoc) {
+
+            if(listDoc.length > 0) {
+
+              return SheetType.find({where: {name: data[idDoc].pages[idPag].sheetsIndex[sheetId].name, docTypeId: listDoc[0].id}}).then(function(listSheet) {
+
                 if(listSheet.length > 0){
-                  return FieldType.find({where: {name: data[idDoc].pages[idPag].sheetsIndex[sheetId].listInputs[inputId].name, sheetTypeId: listSheet[0]}}).then(function(listTypeField){
-                    Area.create({name:data[idDoc].pages[idPag].sheetsIndex[sheetId].listInputs[inputId].name, points:data[idDoc].pages[idPag].sheetsIndex[sheetId].listInputs[inputId].points, fieldTypeId:listTypeField[0]}).then(function(area) {
+
+                  return FieldType.find({where: {name: data[idDoc].pages[idPag].sheetsIndex[sheetId].listInputs[inputId].name, sheetTypeId: listSheet[0]}}).then(function(listTypeField) {
+
+                    return Area.create({
+                      name: data[idDoc].pages[idPag].sheetsIndex[sheetId].listInputs[inputId].name,
+                      points: data[idDoc].pages[idPag].sheetsIndex[sheetId].listInputs[inputId].points,
+                      fieldTypeId: listTypeField[0]
+                    }).then(function(area) {
 
                       count.areas++;
                       area.sheet(sheet);
@@ -83,27 +96,28 @@ module.exports = function(Document) {
                       for(var annotId in data[idDoc].pages[idPag].sheetsIndex[sheetId].listInputs[inputId].annotations) addAnnot([idDoc, idPag, sheetId, inputId, annotId, doc, pag, sheet, area]);//queue.push([addAnnot, [idDoc, idPag, sheetId, inputId, annotId, doc, pag, sheet, area]]);
 
                       saveQueue.push([function(params) {
-
                         var area = params[0];
                         var sheet = params[1];
-
                         area.save();
                         count.saved++;
-
                         promises.push(sheet.areas.create(area));
-
                       }, [area, sheet]]);
 
-                    });
-                  });
-                }
-              });
-            }
-          }));
+                    }); //end Area.create
 
-      }
+                  }); //end FieldType.find
 
-    };
+                } //endif
+
+              }); //end SheeType.find
+
+            } //endif
+
+          })); //end DocumentType.find
+
+      } //end if
+
+    }; //end addInput
 
     var addSheet = function(params) {
 
@@ -113,10 +127,17 @@ module.exports = function(Document) {
       var doc = params[3];
       var pag = params[4];
 
-      promises.push(DocumentType.find({where: {name:data[idDoc].type}}).then(function(listDoc){
-        if(listDoc.length > 0){
-          return SheetType.find({where: {name:data[idDoc].pages[idPag].sheetsIndex[sheetId].name, docTypeId: listDoc[0].id}}).then(function(listSheet){
-            return Sheet.create({name:data[idDoc].pages[idPag].sheetsIndex[sheetId].name, points:data[idDoc].pages[idPag].sheetsIndex[sheetId].points, sheetType: listSheet[0]}).then(function(sheet) {
+      promises.push(DocumentType.find({where: {name: data[idDoc].type}}).then(function(listDoc) {
+
+        if(listDoc.length > 0) {
+
+          return SheetType.find({where: {name: data[idDoc].pages[idPag].sheetsIndex[sheetId].name, docTypeId: listDoc[0].id}}).then(function(listSheet) {
+
+            return Sheet.create({
+              name: data[idDoc].pages[idPag].sheetsIndex[sheetId].name,
+              points: data[idDoc].pages[idPag].sheetsIndex[sheetId].points,
+              sheetType: listSheet[0]
+            }).then(function(sheet) {
 
               count.sheets++;
               sheet.parent(pag);
@@ -125,24 +146,22 @@ module.exports = function(Document) {
               for(var inputId in data[idDoc].pages[idPag].sheetsIndex[sheetId].listInputs) addInput([idDoc, idPag, sheetId, inputId, doc, pag, sheet]);//queue.push([addInput, [idDoc, idPag, sheetId, inputId, doc, pag, sheet]]);
 
               saveQueue.push([function(params) {
-
                 var sheet = params[0];
                 var pag = params[1];
-
                 sheet.save();
                 count.saved++;
-
                 promises.push(pag.sheets.create(sheet));
-
               }, [sheet, pag]]);
 
-            });
-          });
-        }
+            }); //end Sheet.create
 
-    }));
+          }); //end SheeType.find
 
-    };
+        } //endif
+
+      })); //end DocumentType.find
+
+    }; //end addSheet
 
     var addPage = function(params) {
 
@@ -150,7 +169,7 @@ module.exports = function(Document) {
       var idPag = params[1];
       var doc = params[2];
 
-      promises.push(Page.create({image:data[idDoc].pages[idPag].image}).then(function(pag) {
+      promises.push(Page.create({image: data[idDoc].pages[idPag].image}).then(function(pag) {
 
         count.pages++;
 
@@ -158,56 +177,60 @@ module.exports = function(Document) {
         for(var sheetId in data[idDoc].pages[idPag].sheetsIndex) addSheet([idDoc, idPag, sheetId, doc, pag]);//queue.push([addSheet, [idDoc, idPag, sheetId, doc, pag]]);
 
         saveQueue.push([function(params) {
-
           var pag = params[0];
           var doc = params[1];
-
           pag.save();
           count.saved++;
-
           promises.push(doc.pages.create(pag));
-
         }, [pag, doc]]);
 
       }));
 
-    };
+    }; //end addPage
 
     var addDoc = function(idDoc) {
 
       var date = data[idDoc].date.split('/').reverse().join('/');
-      if(data[idDoc].hasOwnProperty('type')){
-        promises.push(DocumentType.find({where: {name:data[idDoc].type}}).then(function(typeDoc){
-          if(typeDoc.length>0){
+
+      if(data[idDoc].hasOwnProperty('type')) {
+
+        promises.push(DocumentType.find({where: {name: data[idDoc].type}}).then(function(typeDoc) {
+
+          if(typeDoc.length > 0) {
+
             count.documents++;
-            return Document.create({date: date, title: data[idDoc].title, docType:typeDoc[0]}).then(function(doc) {
+
+            return Document.create({
+              date: date,
+              title: data[idDoc].title,
+              docType: typeDoc[0]
+            }).then(function(doc) {
 
               for(var idPag in data[idDoc].pages.reverse()) queue.push([addPage, [idDoc, idPag, doc]]);
+
               saveQueue.push([function(params) {
-
                 var doc = params[0];
-
                 doc.save();
                 count.saved++;
-
-
               }, [doc]])
 
-            });
+            }); //end Document.create
 
           } else {
-            console.log("ERROR DOCUMENT -- "+count.documents+1+" - ID TYPE MISSING");
+
+            console.log("ERROR DOCUMENT -- " + count.documents + 1 + " - WRONG ID TYPE : " + data[idDoc].type);
+
           }
 
+        })); //end DocumentType.find
 
-
-        }));
       } else {
+
         console.log("ERROR DOCUMENT !! "+count.documents+1+" - ID TYPE MISSING");
+
       }
 
-
-    };
+    }; //end addDoc
 
     var consumeSaveQueue = function() {
 
@@ -235,8 +258,7 @@ module.exports = function(Document) {
         clearInterval(progressInterval);
         consumeSaveQueue();
 
-      }
-      else {
+      } else {
 
         var q = queue.shift();
         (q[0])(q[1]);

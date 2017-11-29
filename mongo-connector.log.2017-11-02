@@ -1,9 +1,0 @@
-2017-11-02 14:23:25,597 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
-2017-11-02 14:23:25,598 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.10 (default, Feb  7 2017, 00:08:15) 
-[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)]
-2017-11-02 14:23:25,651 [ALWAYS] mongo_connector.connector:51 - Platform: Darwin-16.7.0-x86_64-i386-64bit
-2017-11-02 14:23:25,651 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.5.1
-2017-11-02 14:23:25,651 [WARNING] mongo_connector.connector:103 - No doc managers specified, using simulator.
-2017-11-02 14:23:25,656 [WARNING] mongo_connector.connector:167 - MongoConnector: Can't find /Users/jordhanmadec/dev/gutemberg/gutemberg-node/oplog.timestamp, attempting to create an empty progress log
-2017-11-02 14:23:25,664 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.10
-2017-11-02 14:23:25,664 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.doc_manager_simulator version: 2.5.1

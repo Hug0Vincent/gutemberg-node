@@ -13,13 +13,13 @@ module.exports = function(Annotation) {
 
 		/* To access the other Documents Types */
 	 	var Area = Annotation.app.models.Area;
-	  	var Sheet = Annotation.app.models.Sheet;
-	  	var Page = Annotation.app.models.Page;
-	  	var Document = Annotation.app.models.Document;
-			var DocumentType = Annotation.app.models.DocumentType;
-	  	var split;
+  	var Sheet = Annotation.app.models.Sheet;
+  	var Page = Annotation.app.models.Page;
+  	var Document = Annotation.app.models.Document;
+		var DocumentType = Annotation.app.models.DocumentType;
+  	var split;
 
-	  	/* Splitting the words passed in parameter to add them one by one at the request */
+	  /* Splitting the words passed in parameter to add them one by one at the request */
 		var path = 'gutemberg-bdd/_search?pretty&q='
 		if( typeof param != 'undefined'){
 			split = param.split(" ");
@@ -28,25 +28,23 @@ module.exports = function(Annotation) {
 	    		path += 'AND(text:*' + split[i] + '*)';
 		}
 
-		console.log("PATH : "+path);
+    if( (typeof user != 'undefined') && (typeof param != 'undefined') )
+    	path += 'AND';
 
-	    if( (typeof user != 'undefined') && (typeof param != 'undefined') )
-	    	path += 'AND';
-
-	    if(typeof user != 'undefined')
-	    	path += '(user:' + user + ')';
+    if(typeof user != 'undefined')
+    	path += '(user:' + user + ')';
 
 		/* Options for the HTTP request (query to ElasticSearch) */
 		var http_options = {
 			url: 'http://127.0.0.1',
 		   	port: 9200,
 		   	path: path + "&size=" + (size || 10),
-			headers: {
+				headers: {
 					'content-type': 'application/json',
 			}
 		};
 
-		console.log(http_options.path);
+		console.log("Search path : " + http_options.path);
 
 		var to_client = {};
 		var promises = [];
@@ -73,26 +71,39 @@ module.exports = function(Annotation) {
 			});
 		}
 
+
+
 		/* Requesting ES */
-		var post_req = http.request(http_options, function(res_http){
+		var post_req = http.request(http_options, function(res_http) {
+
 			res_http.setEncoding('utf8');
 			var chunck = '';
-		  	res_http.on('data', (d) => { chunck += d; });
-		  	res_http.on('end', () => {
-		   		to_client = JSON.parse(chunck);
-		   		if(typeof to_client.hits != 'undefined'){
+		  res_http.on('data', (d) => { chunck += d; });
+		  res_http.on('end', () => {
+
+		  	to_client = JSON.parse(chunck);
+				console.log("TOCLIENT : ", to_client);
+
+				if(typeof to_client.hits != 'undefined') {
+
 					for(var i = 0; i < to_client.hits.hits.length; i++)
 						promises.push(new Promise(function(fullfill, reject) {
-							console.log("GETID", to_client.hits.hits[i]);
+							//console.log("GETID", to_client.hits.hits[i]);
 							getIds(to_client.hits.hits[i], fullfill, reject);
 						}));
+
 					Promise.all(promises).then(function() {
 						callback(null, to_client);
 					});
-				}else
-					callback(null, {hits:{hits:[]}, total: 0});
-	   		});
+
+				} else {
+					callback(null, { hits:{hits:[]}, total: 0 });
+				}
+
+				});
+
     	});
+
     	post_req.end();
 
 	};

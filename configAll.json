@@ -1,0 +1,214 @@
+[
+	{
+		"name": "Presse ancienne",
+		"defaultContributor": "Gutemberg",
+		"sheetType": [
+			{
+				"name": "Article",
+				"fieldType":[
+					{
+						"name": "Titre",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Paragraphe",
+						"required": false,
+						"type": "text",
+						"number": -1
+					}
+
+				]
+			},
+			{
+				"name": "Titre de journal",
+				"fieldType":[
+					{
+						"name": "Titre",
+						"required": true,
+						"type": "text",
+						"number": 1
+					}
+
+				]
+			}
+		]
+
+	},
+	{
+		"name": "Registre matricule",
+		"defaultContributor": "Gutemberg",
+		"sheetType":[
+			{
+				"name": "Fiche personnelle",
+				"fieldType":[
+					{
+						"name": "Matricule",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Mobilisation",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Etat civil",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Signalement",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Canton",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Degré",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Décision",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Informations",
+						"required": false,
+						"type": "text",
+						"number": -1
+					},
+					{
+						"name": "Habitation",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Secret gauche",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Secret droit",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			}
+		]
+	},
+
+	{
+		"name": "Décret de naturalisation",
+		"defaultContributor": "Gutemberg",
+		"sheetType": [
+			{
+				"name": "Acte de naturalisation",
+				"fieldType":[
+					{
+						"name": "Date de naissance",
+						"required": true,
+						"type": "date",
+						"number": 1
+					},
+					{
+						"name": "Nom du bénificaire principal",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Numero de dossier",
+						"required": true,
+						"type": "text",
+						"number": 1
+					}
+				]
+			},
+			{
+				"name": "Décret de naturalisation",
+				"fieldType":[
+					{
+						"name": "Catégories de demandes concernées",
+						"required": false,
+						"type": "text",
+						"number": -1
+					},
+					{
+						"name": "Catégories de personnes concernées",
+						"required": false,
+						"type": "text",
+						"number": -11
+					},
+					{
+						"name": "Cote du carton",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Date",
+						"required": false,
+						"type": "date",
+						"number": 1
+					},
+					{
+						"name": "Intitulé complet du document",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieux d'origine",
+						"required": false,
+						"type": "text",
+						"number": -1
+					},
+					{
+						"name": "Nb de pages",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Numéro du document",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Numfic",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			}
+
+		]
+	}
+
+
+]

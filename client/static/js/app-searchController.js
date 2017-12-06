@@ -179,7 +179,7 @@ app.controller("searchController", function($scope, $rootScope, $location, $rout
       $rootScope.error = {
         title: "Oops! Une erreur s'est produite",
         description: "Impossible d'effectuer la recherche, veuillez ré-essayer.",
-        canClose: true
+        canClose: false
       }
 
       $('#loader').hide();
@@ -248,7 +248,7 @@ app.controller("searchController", function($scope, $rootScope, $location, $rout
       $rootScope.error = {
         title: "Oops! Une erreur s'est produite",
         description: "Impossible d'effectuer la recherche, veuillez ré-essayer.",
-        canClose: true
+        canClose: false
       }
 
       $('#loader').hide();

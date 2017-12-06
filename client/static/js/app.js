@@ -85,10 +85,10 @@ app.run(function($rootScope, $http, localStorageService) {
 
   /** if user is logged in, just load back its account */
 
-  $rootScope.user_loaded = false;
+  $rootScope.user_loaded = true;
 
   $rootScope.user = {
-    loggedIn: false,
+    loggedIn: null,
     email: null,
     password: null,
     name: null,
@@ -184,6 +184,12 @@ app.run(function($rootScope, $http, localStorageService) {
 
   }
 
+  $rootScope.loginTest = function() {
+    
+        console.log('--------------------');
+    
+      }
+
   /** Show register modal */
 
   $rootScope.register = function() {
@@ -199,10 +205,12 @@ app.run(function($rootScope, $http, localStorageService) {
   */
 
   $rootScope.doLogin = function(user_types) {
+    console.log("doLogin")
+    
 
     if(typeof user_types == 'undefined') user_types = ["MyUser", "Moderator", "Administrator"];
     var user_type = user_types.shift();
-
+    console.log("user type "+user_type);
     $('#loader').show();
 
     /**
@@ -213,9 +221,12 @@ app.run(function($rootScope, $http, localStorageService) {
     */
 
     // first access_token
+    console.log($rootScope.user.email+" "+$rootScope.user.password);
     $http.post(API + user_type + 's/login', { email: $rootScope.user.email, password: $rootScope.user.password }).then(function(r) {
 
+      console.log("r "+r);
       $rootScope.auth_token = r.data.id;
+
 
       // then get user info
       $http.get(API + user_type + 's/' + r.data.userId + '?access_token=' + $rootScope.auth_token).then(function(ru) {
@@ -288,10 +299,12 @@ app.run(function($rootScope, $http, localStorageService) {
   */
 
   $rootScope.doRegister = function() {
+    console.log("doRegister")
+    console.log("rootScope : "+$rootScope.user.email+$rootScope.user.password+"<");
 
     $('#loader').show();
 
-    $http.post(API + 'myusers', {
+    $http.post(API + 'MyUsers', {
       email: $rootScope.user.email,
       password: $rootScope.user.password,
       name: $rootScope.user.name,
@@ -346,6 +359,8 @@ app.run(function($rootScope, $http, localStorageService) {
       type: null
     };
 
+    console.log('reload');
+    $window.location.reload();
     $rootScope.auth_token = null;
 
   }

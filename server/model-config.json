@@ -33,7 +33,7 @@
   },
   "Role": {
     "dataSource": "db",
-    "public": false
+    "public": true
   },
   "Document": {
     "dataSource": "db",
@@ -91,7 +91,7 @@
     "dataSource": "db",
     "public": true,
     "options": {
-      "emailVerificationRequired": true
+      "emailVerificationRequired": false
     }
   },
   "Email": {

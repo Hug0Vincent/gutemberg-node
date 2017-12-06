@@ -100,7 +100,7 @@
     <div id="loginModal" class="alert ui small modal transition">
 
       <div class="header">
-        <h2>Connexion</h2>
+        <h2>Connexion oui</h2>
       </div>
 
       <div class="content">
@@ -151,7 +151,7 @@
 
         <div class="description">
 
-          <form class="ui form" ng-submit="doLogin()">
+          <form class="ui form" ng-submit="doRegister()" id="myForm">
             <div class="ui field">
               <label>Adresse e-mail</label>
               <input type="email" name="mail" ng-model="user.email" placeholder="Adresse e-mail">
@@ -169,6 +169,7 @@
               <input type="text" name="job" ng-model="user.job" placeholder="Emploi">
             </div>
           </form>
+          <button type="submit" form="myForm" value="Submit">Submit</button>
 
           <p>Vous avez déjà un compte ? <a ng-click="login()">Connectez-vous</a> !</p>
 

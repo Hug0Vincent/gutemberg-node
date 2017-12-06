@@ -63,9 +63,7 @@
 
     </div>
 
-    <h2 class="ui sixteen wide column">
-      <span ng-if="!lazyLoadDone"><i class="notched circle loading small icon"></i> au moins</span> {{ nb || '0' }} résultat<span ng-if="nb > 1">s</span>
-    </h2>
+    <h2 class="ui sixteen wide column"><span ng-if="!lazyLoadDone"><i class="notched circle loading small icon"></i> au moins</span> {{ nb || '0' }} résultat<span ng-if="nb > 1">s</span></h2>
 
     <div ng-repeat="(doc_type, v) in document_types" class="ui sixteen wide column"><section class="ui segment">
       <h3>{{ doc_type }}</h3>

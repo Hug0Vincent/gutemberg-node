@@ -567,10 +567,12 @@ module.exports = function(Document) {
 
     var findAnnot = function(annotId, fullfill_bis, reject){
       AutomaticAnnotation.findById(annotId).then(function(annot){
+        console.log("error id "+annotId);
         if(annot != null){
           annotation = annot;
           fullfill_bis();
         }else{
+          console.log("error id "+annotId);
           ManualAnnotation.findById(annotId).then(function(annot){
         if(annot != null){
               annotation = annot;
@@ -586,6 +588,11 @@ module.exports = function(Document) {
       new Promise(function(fullfill_bis, reject){
         findAnnot(id, fullfill_bis, reject);
       }).then(function(){
+        
+        console.log("error id "+annotation.areaId);
+        console.log("error id "+area.sheetId);
+        console.log("error id "+sheet.parentId);
+
         Area.findById(annotation.areaId).then(function(area){
           Sheet.findById(area.sheetId).then(function(sheet){
             Page.findById(sheet.parentId, {fields : {documentId: true}}).then(function(d) {

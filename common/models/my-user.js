@@ -5,7 +5,7 @@ var path = require('path');
 
 module.exports = function(Myuser) {
   //send verification email after registration
-  Myuser.afterRemote('create', function(context, userInstance, next) {
+  /*Myuser.afterRemote('create', function(context, userInstance, next) {
     console.log('> user.afterRemote triggered');
 
     var options = {
@@ -22,7 +22,8 @@ module.exports = function(Myuser) {
     };
 
     userInstance.verify(options, function(err, response, next) {
-      if (err) return next(err);
+      console.log('----------email confirmation---------');
+      //if (err) return next(err);
 
       console.log('> verification --------- email sent:', response);
 
@@ -35,7 +36,8 @@ module.exports = function(Myuser) {
         redirectToLinkText: 'Log in'
       });
     });
-  });
+  });*/
+  
 
   Myuser.upgrade = function(user, callback) {
     var Administrator = Myuser.app.models.Administrator;

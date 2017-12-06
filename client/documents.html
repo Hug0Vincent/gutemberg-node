@@ -133,13 +133,13 @@
 
         <section ng-if="user.loggedIn">
           <i ng-click="logout()" class="Power large icon"></i>
-          <i ng-click="admin()" class="lock large icon" ng-if="user.type == 'Administrator' || user.type == 'Moderator'"></i>
+          <i ng-click="admin()" class="lock large icon" ng-if="user.type == 'Administrator'"></i>
           <a id="profil">{{ user.name }}</a>
         </section>
         <section ng-if="!user.loggedIn" ng-click="login()" style="cursor:pointer">
           <i class="Power large icon"></i>
           <a>
-            Se connecter
+            Se connecter héhé
           </a>
         </section>
       </nav>

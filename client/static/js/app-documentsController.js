@@ -439,6 +439,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
     $('#openseadragon').html('');
 
     tileSources = [];
+    console.log(IMG_URL);
     for(var i = 0; i < $scope.document._pages.length; i++) tileSources.push(IMG_URL + $scope.document._pages[i].image.split(".")[0] + ".dzi");
 
     $('#btn-next, #btn-previous, #btn-zoom-in, #btn-zoom-out, #btn-add').popup();
@@ -878,8 +879,8 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
     /** add delete area buttons event listeners */
     $('[aria-func=deleteArea]').off("click");
     $('[aria-func=deleteArea]').click(function() {
-
       var area_id = $(this).attr('aria-data');
+    
 
       $http.post(API + 'areas/delete?access_token=' + $rootScope.auth_token, {
         areaId: area_id
@@ -1065,7 +1066,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
     for(var x in $scope.currentSheet._areas) {
       var a = $scope.currentSheet._areas[x];
       console.log(a);
-      selected.areas[a.name].push(a);
+      selected.areas["Titre"].push(a);
     }
 
     for(ifield in selected.fieldTypes) {

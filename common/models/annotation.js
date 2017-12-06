@@ -83,7 +83,6 @@ module.exports = function(Annotation) {
 		   		if(typeof to_client.hits != 'undefined'){
 					for(var i = 0; i < to_client.hits.hits.length; i++)
 						promises.push(new Promise(function(fullfill, reject) {
-							console.log("GETID", to_client.hits.hits[i]);
 							getIds(to_client.hits.hits[i], fullfill, reject);
 						}));
 					Promise.all(promises).then(function() {

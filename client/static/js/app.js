@@ -85,7 +85,7 @@ app.run(function($rootScope, $http, localStorageService) {
 
   /** if user is logged in, just load back its account */
 
-  $rootScope.user_loaded = true;
+  $rootScope.user_loaded = false;
 
   $rootScope.user = {
     loggedIn: null,
@@ -359,8 +359,7 @@ app.run(function($rootScope, $http, localStorageService) {
       type: null
     };
 
-    console.log('reload');
-    $window.location.reload();
+    
     $rootScope.auth_token = null;
 
   }

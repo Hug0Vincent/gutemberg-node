@@ -133,6 +133,11 @@ app.controller("adminController", function($scope, $rootScope, $location, $http,
     });
   }
 
+  $scope.logoutAdmin = function() {
+    $location.path('/');
+    $rootScope.logout();
+  }
+
   /** start loading as soon as current user has been retrieved */
 
   $scope.timeout = function() {
@@ -144,8 +149,10 @@ app.controller("adminController", function($scope, $rootScope, $location, $http,
       if($rootScope.user.type != 'Administrator') $location.path('/');
       else $scope.load();
 
-    } else $timeout($scope.timeout, 100);
-
+    } else {
+      Console.load(">-----timeout");
+      $timeout($scope.timeout, 100);
+    }
   };
 
   $('#content .segment').addClass('loading');

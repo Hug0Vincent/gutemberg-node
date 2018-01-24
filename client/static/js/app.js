@@ -88,12 +88,12 @@ app.run(function($rootScope, $http, localStorageService) {
   $rootScope.user_loaded = false;
 
   $rootScope.user = {
-    loggedIn: null,
-    email: null,
-    password: null,
-    name: null,
-    job: null,
-    type: null
+    loggedIn: true,
+    email: 'cadioumaxime@gmail.com',
+    password: '1234',
+    name: 'Maxime',
+    job: 'a',
+    type: 'Administrator'
   };
 
   var tmp_user = localStorageService.get('user');
@@ -359,7 +359,7 @@ app.run(function($rootScope, $http, localStorageService) {
       type: null
     };
 
-    
+
     $rootScope.auth_token = null;
 
   }

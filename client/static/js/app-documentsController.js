@@ -49,6 +49,11 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
     $location.path('/admin');
   }
 
+  $scope.logoutUser = function() {
+     $location.path('/');
+     $rootScope.logout();
+   }
+
   /** add sheet mode */
 
   $('#addannotmodal').modal({detachable: false});

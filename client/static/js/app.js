@@ -85,7 +85,7 @@ app.run(function($rootScope, $http, localStorageService) {
 
   /** if user is logged in, just load back its account */
 
-  $rootScope.user_loaded = true;
+  $rootScope.user_loaded = false;
 
   $rootScope.user = {
     loggedIn: null,
@@ -185,9 +185,9 @@ app.run(function($rootScope, $http, localStorageService) {
   }
 
   $rootScope.loginTest = function() {
-    
+
         console.log('--------------------');
-    
+
       }
 
   /** Show register modal */
@@ -206,7 +206,7 @@ app.run(function($rootScope, $http, localStorageService) {
 
   $rootScope.doLogin = function(user_types) {
     console.log("doLogin")
-    
+
 
     if(typeof user_types == 'undefined') user_types = ["MyUser", "Moderator", "Administrator"];
     var user_type = user_types.shift();
@@ -359,8 +359,7 @@ app.run(function($rootScope, $http, localStorageService) {
       type: null
     };
 
-    console.log('reload');
-    $window.location.reload();
+    
     $rootScope.auth_token = null;
 
   }

@@ -17,7 +17,7 @@
         </section>
 
         <section ng-if="user.loggedIn">
-          <i ng-click="logout()" class="Power large icon"></i>
+          <i ng-click="logoutAdmin()" class="Power large icon"></i>
           <a id="profil">{{ user.name }}</a>
         </section>
         <section ng-if="!user.loggedIn" ng-click="login()" style="cursor:pointer">

@@ -363,7 +363,7 @@ module.exports = function(Document) {
     var to_client = [];
     var tmp = {};
     /* Creating the path/request according to the parameters */
-    var path = 'gutemberg-bdd/_search?pretty&type=Document&size=' + ( size || 10 ) + '&q=';
+    var path = 'gutemberg/_search?pretty&type=Document&size=' + ( size || 10 ) + '&q=';
 
     if ( (typeof range != 'undefined') && (typeof date != 'undefined') ){
       if(range == 0)

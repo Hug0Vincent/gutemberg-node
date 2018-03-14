@@ -1,7 +1,7 @@
 {
   "db": {
-    "url": "mongodb://localhost/gutemberg-bdd?connectTimeoutMS=99999999999",
-    "database": "gutemberg-bdd",
+    "url": "mongodb://localhost/gutemberg?connectTimeoutMS=99999999999",
+    "database": "gutemberg",
     "name": "db",
     "connector": "mongodb"
   },

@@ -20,7 +20,7 @@ module.exports = function(Annotation) {
   	var split;
 
 	  /* Splitting the words passed in parameter to add them one by one at the request */
-		var path = 'gutemberg-bdd/_search?pretty&q='
+		var path = 'gutemberg/_search?pretty&q='
 		if( typeof param != 'undefined'){
 			split = param.split(" ");
 			path += '(text:*' + split[0] + '*)';

@@ -1,0 +1,175 @@
+2018-03-25 15:30:08,033 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-25 15:30:08,045 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-25 15:30:08,048 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-25 15:30:08,048 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-25 15:30:08,050 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-25 15:30:08,185 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-25 15:30:08,186 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-25 15:56:29,553 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-25 15:56:29,554 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-25 15:56:29,555 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-25 15:56:29,555 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-25 15:56:29,556 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-25 15:56:29,645 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-25 15:56:29,648 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-25 15:58:31,822 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-25 15:58:31,823 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-25 15:58:31,825 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-25 15:58:31,825 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-25 15:58:31,827 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-25 15:58:32,712 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-25 15:58:32,712 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-25 15:58:37,839 [WARNING] elasticsearch:96 - POST http://localhost:9200/_bulk [status:N/A request:0.008s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-03-25 15:58:37,854 [WARNING] elasticsearch:96 - POST http://localhost:9200/_bulk [status:N/A request:0.002s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-03-25 15:58:37,858 [WARNING] elasticsearch:96 - POST http://localhost:9200/_bulk [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-03-25 15:58:37,862 [WARNING] elasticsearch:96 - POST http://localhost:9200/_bulk [status:N/A request:0.002s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-03-25 15:58:37,864 [ERROR] mongo_connector.doc_managers.elastic2_doc_manager:491 - Bulk request failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/mongo_connector/doc_managers/elastic2_doc_manager.py", line 484, in send_buffered_operations
+    successes, errors = bulk(self.elastic, action_buffer)
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/helpers/__init__.py", line 194, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+ConnectionError: ConnectionError(('Connection aborted.', error(99, 'Cannot assign requested address'))) caused by: ProtocolError(('Connection aborted.', error(99, 'Cannot assign requested address')))
+2018-03-25 16:00:08,887 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-25 16:00:08,890 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-25 16:00:08,892 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-25 16:00:08,892 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-25 16:00:08,893 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-25 16:00:08,937 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-25 16:00:08,938 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-25 16:04:28,037 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-25 16:04:28,039 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-25 16:04:28,041 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-25 16:04:28,041 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-25 16:04:28,042 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-25 16:04:28,121 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-25 16:04:28,121 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-25 16:07:22,937 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-25 16:07:22,938 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-25 16:07:22,939 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-25 16:07:22,939 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-25 16:07:22,940 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-25 16:07:23,019 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-25 16:07:23,020 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0

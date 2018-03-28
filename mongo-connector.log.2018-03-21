@@ -1,0 +1,538 @@
+2018-03-21 12:36:45,125 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 12:36:45,135 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 12:36:45,136 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 12:36:45,137 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 12:36:45,137 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 12:36:45,228 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 12:36:45,228 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 12:39:44,058 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 12:39:44,070 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 12:39:44,071 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 12:39:44,072 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 12:39:44,072 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 12:39:44,155 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 12:39:44,156 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 12:44:16,712 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 12:44:16,713 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 12:44:16,713 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 12:44:16,714 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 12:44:16,715 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 12:44:16,847 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 12:44:16,848 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 12:46:38,187 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 12:46:38,188 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 12:46:38,189 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 12:46:38,189 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 12:46:38,190 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 12:46:38,346 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 12:46:38,348 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 12:50:42,610 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 12:50:42,612 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 12:50:42,613 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 12:50:42,614 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 12:50:42,614 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 12:50:42,697 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 12:50:42,699 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 12:53:51,760 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 12:53:51,762 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 12:53:51,763 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 12:53:51,764 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 12:53:51,765 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 12:53:51,821 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 12:53:51,822 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 12:57:32,566 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 12:57:32,567 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 12:57:32,568 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 12:57:32,569 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 12:57:32,570 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 12:57:32,646 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 12:57:32,647 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 13:01:46,503 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 13:01:46,504 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 13:01:46,505 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 13:01:46,505 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 13:01:46,506 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 13:01:46,588 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 13:01:46,589 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 13:04:25,323 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 13:04:25,324 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 13:04:25,341 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 13:04:25,342 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 13:04:25,343 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 13:04:25,422 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 13:04:25,423 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 13:08:29,575 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 13:08:29,576 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 13:08:29,577 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 13:08:29,578 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 13:08:29,578 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 13:08:29,654 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 13:08:29,655 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 13:11:44,793 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 13:11:44,794 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 13:11:44,796 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 13:11:44,796 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 13:11:44,797 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 13:11:44,877 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 13:11:44,878 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 13:13:15,532 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 13:13:15,534 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 13:13:15,535 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 13:13:15,536 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 13:13:15,536 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 13:13:15,611 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 13:13:15,612 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 13:17:09,169 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 13:17:09,171 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 13:17:09,173 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 13:17:09,174 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 13:17:09,175 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 13:17:09,251 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 13:17:09,252 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 13:17:15,273 [WARNING] elasticsearch:96 - POST http://localhost:9200/_bulk [status:N/A request:0.021s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-03-21 13:17:15,292 [WARNING] elasticsearch:96 - POST http://localhost:9200/_bulk [status:N/A request:0.002s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-03-21 13:17:15,295 [WARNING] elasticsearch:96 - POST http://localhost:9200/_bulk [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-03-21 13:17:15,298 [WARNING] elasticsearch:96 - POST http://localhost:9200/_bulk [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-03-21 13:17:15,301 [ERROR] mongo_connector.doc_managers.elastic2_doc_manager:491 - Bulk request failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/mongo_connector/doc_managers/elastic2_doc_manager.py", line 484, in send_buffered_operations
+    successes, errors = bulk(self.elastic, action_buffer)
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/helpers/__init__.py", line 194, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+ConnectionError: ConnectionError(('Connection aborted.', error(99, 'Cannot assign requested address'))) caused by: ProtocolError(('Connection aborted.', error(99, 'Cannot assign requested address')))
+2018-03-21 13:21:52,605 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 13:21:52,606 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 13:21:52,607 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 13:21:52,607 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 13:21:52,607 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 13:21:52,617 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 13:21:52,618 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 13:31:15,820 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 13:31:15,821 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 13:31:15,822 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 13:31:15,822 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 13:31:15,823 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 13:31:15,901 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 13:31:15,902 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 13:36:18,669 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 13:36:18,670 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 13:36:18,671 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 13:36:18,671 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 13:36:18,672 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 13:36:18,718 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 13:36:18,718 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 13:37:26,232 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 13:37:26,232 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 13:37:26,233 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 13:37:26,234 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 13:37:26,234 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 13:37:26,310 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 13:37:26,311 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 13:39:21,868 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 13:39:21,869 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 13:39:21,871 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 13:39:21,871 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 13:39:21,871 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 13:39:21,958 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 13:39:21,958 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 13:40:11,425 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 13:40:11,425 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 13:40:11,426 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 13:40:11,427 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 13:40:11,427 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 13:40:11,511 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 13:40:11,511 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 13:41:34,218 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 13:41:34,221 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 13:41:34,223 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 13:41:34,223 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 13:41:34,224 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 13:41:34,272 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 13:41:34,274 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 13:43:25,370 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 13:43:25,372 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 13:43:25,373 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 13:43:25,374 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 13:43:25,375 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 13:43:25,517 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 13:43:25,517 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 14:56:21,895 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 14:56:21,896 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 14:56:21,897 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 14:56:21,898 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 14:56:21,899 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 14:56:21,977 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 14:56:21,977 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 16:50:54,581 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 16:50:54,584 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 16:50:54,585 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 16:50:54,586 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 16:50:54,587 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 16:50:54,724 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 16:50:54,725 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 16:51:00,644 [WARNING] elasticsearch:96 - POST http://localhost:9200/_bulk [status:N/A request:0.032s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-03-21 16:51:00,660 [WARNING] elasticsearch:96 - POST http://localhost:9200/_bulk [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-03-21 16:51:00,663 [WARNING] elasticsearch:96 - POST http://localhost:9200/_bulk [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-03-21 16:51:00,664 [WARNING] elasticsearch:96 - POST http://localhost:9200/_bulk [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-03-21 16:51:00,666 [ERROR] mongo_connector.doc_managers.elastic2_doc_manager:491 - Bulk request failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/mongo_connector/doc_managers/elastic2_doc_manager.py", line 484, in send_buffered_operations
+    successes, errors = bulk(self.elastic, action_buffer)
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/helpers/__init__.py", line 194, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+ConnectionError: ConnectionError(('Connection aborted.', error(99, 'Cannot assign requested address'))) caused by: ProtocolError(('Connection aborted.', error(99, 'Cannot assign requested address')))
+2018-03-21 16:51:47,300 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 16:51:47,301 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 16:51:47,302 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 16:51:47,302 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 16:51:47,302 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 16:51:47,315 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 16:51:47,316 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 16:54:51,331 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 16:54:51,334 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 16:54:51,337 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 16:54:51,339 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 16:54:51,339 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 16:54:51,419 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 16:54:51,420 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 17:03:23,136 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 17:03:23,137 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 17:03:23,139 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 17:03:23,139 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 17:03:23,142 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 17:03:23,255 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 17:03:23,255 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 17:03:53,697 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 17:03:53,698 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 17:03:53,700 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 17:03:53,701 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 17:03:53,701 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 17:03:53,726 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 17:03:53,727 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 17:05:39,790 [ERROR] mongo_connector.doc_managers.elastic2_doc_manager:491 - Bulk request failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/mongo_connector/doc_managers/elastic2_doc_manager.py", line 484, in send_buffered_operations
+    successes, errors = bulk(self.elastic, action_buffer)
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/helpers/__init__.py", line 194, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/helpers/__init__.py", line 134, in _process_bulk_chunk
+    raise BulkIndexError('%i document(s) failed to index.' % len(errors), errors)
+BulkIndexError: (u'6 document(s) failed to index.', [{u'delete': {u'status': 404, u'_type': u'Area', u'_index': u'gutemberg', u'_shards': {u'successful': 1, u'failed': 0, u'total': 2}, u'_version': 6, u'result': u'not_found', u'found': False, u'_id': u'5ab27c7932997a087637b7b3'}}, {u'delete': {u'status': 404, u'_type': u'mongodb_meta', u'_index': u'mongodb_meta', u'_shards': {u'successful': 1, u'failed': 0, u'total': 2}, u'_version': 6, u'result': u'not_found', u'found': False, u'_id': u'5ab27c7932997a087637b7b3'}}, {u'delete': {u'status': 404, u'_type': u'Area', u'_index': u'gutemberg', u'_shards': {u'successful': 1, u'failed': 0, u'total': 2}, u'_version': 6, u'result': u'not_found', u'found': False, u'_id': u'5ab27c3832997a087637b7b1'}}, {u'delete': {u'status': 404, u'_type': u'mongodb_meta', u'_index': u'mongodb_meta', u'_shards': {u'successful': 1, u'failed': 0, u'total': 2}, u'_version': 6, u'result': u'not_found', u'found': False, u'_id': u'5ab27c3832997a087637b7b1'}}, {u'delete': {u'status': 404, u'_type': u'Area', u'_index': u'gutemberg', u'_shards': {u'successful': 1, u'failed': 0, u'total': 2}, u'_version': 6, u'result': u'not_found', u'found': False, u'_id': u'5ab27c6732997a087637b7b2'}}, {u'delete': {u'status': 404, u'_type': u'mongodb_meta', u'_index': u'mongodb_meta', u'_shards': {u'successful': 1, u'failed': 0, u'total': 2}, u'_version': 6, u'result': u'not_found', u'found': False, u'_id': u'5ab27c6732997a087637b7b2'}}])
+2018-03-21 17:11:59,411 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 17:11:59,412 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 17:11:59,412 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 17:11:59,413 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 17:11:59,413 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 17:11:59,458 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 17:11:59,459 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 17:15:38,693 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 17:15:38,694 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 17:15:38,695 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 17:15:38,696 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 17:15:38,696 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 17:15:38,744 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 17:15:38,744 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 17:15:57,170 [ERROR] mongo_connector.util:106 - Fatal Exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/mongo_connector/util.py", line 104, in wrapped
+    func(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/mongo_connector/connector.py", line 404, in run
+    self.write_oplog_progress()
+  File "/usr/local/lib/python2.7/dist-packages/mongo_connector/connector.py", line 264, in write_oplog_progress
+    os.remove(backup_file)
+OSError: [Errno 2] No such file or directory: '/home/gutemberg/dev/gutemberg-node/oplog.timestamp.backup'
+2018-03-21 17:17:32,456 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 17:17:32,457 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 17:17:32,458 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 17:17:32,458 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 17:17:32,459 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 17:17:32,470 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 17:17:32,471 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 17:17:54,803 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 17:17:54,804 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 17:17:54,805 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 17:17:54,806 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 17:17:54,807 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 17:17:55,055 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 17:17:55,056 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 17:19:42,210 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 17:19:42,211 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 17:19:42,212 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 17:19:42,212 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 17:19:42,213 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 17:19:42,239 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 17:19:42,239 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-03-21 17:21:09,045 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-03-21 17:21:09,046 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-03-21 17:21:09,047 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.49-moby-x86_64-with-debian-8.7
+2018-03-21 17:21:09,048 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-03-21 17:21:09,048 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-03-21 17:21:09,091 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-03-21 17:21:09,092 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0

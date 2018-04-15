@@ -152,7 +152,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
       }, function(e) {
 
         $rootScope.error = {
-          title: "Oops! Une erreur s'est produite",
+          title: "Oops! Une erreur s'est produite19",
           description: "Impossible d'effectuer la recherche, veuillez ré-essayer.",
           canClose: true
         }
@@ -167,7 +167,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
     }, function(e) {
 
       $rootScope.error = {
-        title: "Oops! Une erreur s'est produite",
+        title: "Oops! Une erreur s'est produite10",
         description: "Impossible d'effectuer la recherche, veuillez ré-essayer.",
         canClose: true
       }
@@ -409,7 +409,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
      }, function(r) {
 
        $rootScope.error = {
-         title: "Oops! Une erreur s'est produite",
+         title: "Oops! Une erreur s'est produite1",
          description: "Impossible de charger les documents similaires.",
          canClose: true
        }
@@ -424,7 +424,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
   }, function(r) {
 
     $rootScope.error = {
-      title: "Oops! Une erreur s'est produite",
+      title: "Oops! Une erreur s'est produite2",
       description: "Impossible de charger le document requis.",
       canClose: false
     }
@@ -612,7 +612,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
               }, function(p) {
 
                 $rootScope.error = {
-                  title: "Oops! Une erreur s'est produite",
+                  title: "Oops! Une erreur s'est produite1",
                   description: "Impossible de créer la fiche d'annotations.",
                   canClose: true
                 }
@@ -631,7 +631,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
           }, function(p) {
 
             $rootScope.error = {
-              title: "Oops! Une erreur s'est produite",
+              title: "Oops! Une erreur s'est produite2",
               description: "Impossible de créer la fiche d'annotations.",
               canClose: true
             }
@@ -869,7 +869,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
       }, function(e) {
 
         $rootScope.error = {
-          title: "Oops! Une erreur s'est produite",
+          title: "Oops! Une erreur s'est produite3",
           description: "Impossible de supprimer la fiche d'annotation",
           canClose: true
         }
@@ -919,7 +919,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
       }, function(e) {
 
         $rootScope.error = {
-          title: "Oops! Une erreur s'est produite",
+          title: "Oops! Une erreur s'est produite23",
           description: "Impossible de supprimer la fiche d'annotation",
           canClose: true
         }
@@ -956,7 +956,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
       }, function(e) {
 
         $rootScope.error = {
-          title: "Oops! Une erreur s'est produite",
+          title: "Oops! Une erreur s'est produite4",
           description: "Impossible de supprimer la fiche d'annotation",
           canClose: true
         }
@@ -1015,7 +1015,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
         }, function(p) {
 
           $rootScope.error = {
-            title: "Oops! Une erreur s'est produite",
+            title: "Oops! Une erreur s'est produite6",
             description: "Impossible de créer le champ",
             canClose: true
           }
@@ -1029,7 +1029,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
       }, function(p) {
 
         $rootScope.error = {
-          title: "Oops! Une erreur s'est produite",
+          title: "Oops! Une erreur s'est produite71",
           description: "Impossible de créer le champ",
           canClose: true
         }
@@ -1066,7 +1066,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
     }
 
     for(var x in sheetType.fieldTypes) {
-      console.log("SHHET TYPE ", sheetType);
+      console.log("SHEET TYPE ", sheetType);
       selected.fieldTypes.push(sheetType.fieldTypes[x].name);
       selected.areas[sheetType.fieldTypes[x].name] = [];
     }
@@ -1224,7 +1224,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
         console.log("probleme : " + $rootScope.auth_token);
 
         $rootScope.error = {
-          title: "Oops! Une erreur s'est produite",
+          title: "Oops! Une erreur s'est produite76 "+$rootScope.user.username,
           description: "Impossible d'ajouter l'annotation.",
           canClose: true
         }

@@ -89,11 +89,19 @@ app.run(function($rootScope, $http, localStorageService) {
 
   $rootScope.user = {
     loggedIn: true,
+<<<<<<< HEAD
     email: 'cadioumaxime@gmail.com',
     password: '1234',
     name: 'Maxime',
     job: 'Etudiant',
     type: 'Administrator'
+=======
+    email: null,
+    password: null,
+    name: null,
+    job: null,
+    type: null
+>>>>>>> 5a8f77e2653f712887d998a0e878a85d97c609ea
   };
 
   var tmp_user = localStorageService.get('user');

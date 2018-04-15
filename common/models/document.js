@@ -523,7 +523,7 @@ module.exports = function(Document) {
     new Promise(function(fullfill, reject){
       getDoc(id, fullfill, reject);
     }).then(function(){
-      var path = 'gutemberg-bdd/_search?pretty&q=(title:' + my_doc.document_title + ')OR(date:[' + my_doc.document_date.setMonth(my_doc.document_date.getMonth() - 1) + '%20TO%20' + my_doc.document_date.setMonth(my_doc.document_date.getMonth() + 2) + '])';
+      var path = 'gutemberg/_search?pretty&q=(title:' + my_doc.document_title + ')OR(date:[' + my_doc.document_date.setMonth(my_doc.document_date.getMonth() - 1) + '%20TO%20' + my_doc.document_date.setMonth(my_doc.document_date.getMonth() + 2) + '])';
       var http_options = {
         url: 'http://127.0.0.1',
         port: 9200,

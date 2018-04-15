@@ -978,8 +978,8 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
       area_id = $(this).attr('aria-data');
       val = $(this).prev().val();
 
-      console.log(area_id);
-      console.log(val);
+      console.log("area_id : " + area_id);
+      console.log("l'annotation est : " + val);
 
       $(this).addClass('loading');
       $scope.addAnnotation(area_id, val);
@@ -1221,6 +1221,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
         }
 
       }, function(p) {
+        console.log("probleme : " + $rootScope.auth_token);
 
         $rootScope.error = {
           title: "Oops! Une erreur s'est produite",

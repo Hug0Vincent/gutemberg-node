@@ -19,6 +19,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
   $scope.fields = {};
   $scope.colors = {};
   $scope.fieldsShown = [];
+  $scope._resultPremier  = [];
   $scope.editMode = false;
   $scope.readMode = 0;
   $scope.addAnnotMode = false;
@@ -28,6 +29,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
   $scope.toSearch = "";
   $scope.entities = [];
   $scope.real_document_type = null;
+
 
   $('#helpSearch').popup();
 
@@ -424,9 +426,15 @@ app.directive('imageCheckbox', function() {
      */
 
      $http.get(API + 'documents/like?size=3&id=' + $scope.params.id, { timeout: API_TIMEOUT }).then(function(r) {
+// $scope.params.id = id du document similaire
 //   $http.get(API + 'documents/search_similar?type=' + $scope.currentSheet.name + '&text=' + item_title + '&size=3').then(function(r) {
 
+
+       //$scope.similar_docs = r.data.result + $scope._results;
        $scope.similar_docs = r.data.result;
+
+
+       console.log(" YOOOOOO !!!!!!!" + $scope.similar_docs);
        $scope.similarDocsLoaded = true;
 
      }, function(r) {

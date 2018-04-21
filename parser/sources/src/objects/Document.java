@@ -3,47 +3,49 @@ import java.util.HashMap;
 
 /**
  * @author Gutemberg
- * Cette classe permet de modéliser un document
+ * Cette classe permet de modï¿½liser un document
  */
-public class Document 
+public class Document
 {
 	/**
 	 * Constante du type 'presse ancienne'
 	 */
 	public static final String PRESSE_ANCIENNE = "Presse ancienne";
-	
+
 	/**
 	 * Constante du type 'registre matricule'
 	 */
 	public static final String REGISTRES = "Registre matricule";
 
 	/**
-	 * Constante numérique du type 'décret de naturalisation'
+	 * Constante numï¿½rique du type 'dï¿½cret de naturalisation'
 	 */
-	public static final String DECRETS = "Décret de naturalisation";
-	
+	public static final String DECRETS = "DÃ©cret de naturalisation";
+
+	public static final String PAROISSIAUX = "Registre paroissiaux";
+
 	/**
 	 * Liste des pages du document
 	 */
 	private HashMap<String, Page> pages;
-	
+
 	/**
-	 * Valeur correspondant à une des constantes définies
+	 * Valeur correspondant ï¿½ une des constantes dï¿½finies
 	 */
 	private String type;
-	
+
 	/**
 	 * Date du document
 	 */
 	private String date;
-	
+
 	/**
 	 * Titre du document
 	 */
 	private String title;
-	
+
 	/**
-	 * Permet de créer un document
+	 * Permet de crï¿½er un document
 	 * @param t
 	 * 		Titre du document
 	 * @param doc_type
@@ -58,7 +60,7 @@ public class Document
 		date = d;
 		title = t;
 	}
-	
+
 	public String toString()
 	{
 		return "{\"type\":\""+type+"\",\"date\":\""+date+"\",\"title\":\""+title+"\",\"pages\":"+pages.values().toString()+"}";
@@ -94,11 +96,11 @@ public class Document
 	/**
 	 * Ajoute une page au document
 	 * @param id
-	 * 		Numéro de la page
+	 * 		Numï¿½ro de la page
 	 * @param p
-	 * 		Page à lier au document
+	 * 		Page ï¿½ lier au document
 	 */
-	public void addPage(String id, Page p) 
+	public void addPage(String id, Page p)
 	{
 		pages.put(id, p);
 	}

@@ -188,17 +188,13 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
   }
 
   /** Set button background according to tiles background (piste d'idées)
-
-
   function componentToHex(c) {
     var hex = c.toString(16);
     return hex.length == 1 ? "0" + hex : hex;
 }
-
 function rgbToHex(r, g, b) {
     return "'#" + componentToHex(r) + componentToHex(g) + componentToHex(b) + "'";
 }
-
 app.directive('imageCheckbox', function() {
   return {
     link: function(scope, attr) {

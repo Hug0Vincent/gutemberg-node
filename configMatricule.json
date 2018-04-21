@@ -150,74 +150,6 @@
 				]
 			},
 			{
-				"name": "Affectation",
-				"fieldType":[
-					{
-						"name": "Armée active",
-						"required": false,
-						"type": "text",
-						"number": 1
-					},
-					{
-						"name": "Armée de réserve",
-						"required": false,
-						"type": "text",
-						"number": 1
-					},
-					{
-						"name": "Armée térritoriale",
-						"required": false,
-						"type": "text",
-						"number": 1
-					}
-				]
-			},
-			{
-				"name": "Domicile",
-				"fieldType":[
-					{
-						"name": "Date de début",
-						"required": false,
-						"type": "text",
-						"number": 1
-					},
-					{
-						"name": "Date de fin",
-						"required": false,
-						"type": "text",
-						"number": 1
-					},
-					{
-						"name": "Commune",
-						"required": false,
-						"type": "text",
-						"number": 1
-					}
-				]
-			},
-			{
-				"name": "Secret gauche",
-				"fieldType":[
-					{
-						"name": "Commentaire",
-						"required": false,
-						"type": "text",
-						"number": 1
-					}
-				]
-			},
-			{
-				"name": "Conseil de révision",
-				"fieldType":[
-					{
-						"name": "Décision",
-						"required": false,
-						"type": "text",
-						"number": 1
-					}
-				]
-			},
-			{
 				"name": "Fiche personnelle",
 				"fieldType":[
 					{
@@ -288,6 +220,74 @@
 					},
 					{
 						"name": "Secret droit",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			},
+			{
+				"name": "Affectation",
+				"fieldType":[
+					{
+						"name": "Armée active",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Armée de réserve",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Armée térritoriale",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			},
+			{
+				"name": "Domicile",
+				"fieldType":[
+					{
+						"name": "Date de début",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Date de fin",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Commune",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			},
+			{
+				"name": "Secret gauche",
+				"fieldType":[
+					{
+						"name": "Commentaire",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			},
+			{
+				"name": "Conseil de révision",
+				"fieldType":[
+					{
+						"name": "Décision",
 						"required": false,
 						"type": "text",
 						"number": 1

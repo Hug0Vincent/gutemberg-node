@@ -103,8 +103,6 @@ app.controller("searchController", function($scope, $rootScope, $location, $rout
 
       for(var i = 0; i < r.hits.hits.doc.length; i++) {
         var doc = r.hits.hits.doc[i];
-        console.log("teste 123445   " + tmp_results[doctypeFromId(doc.type)].docs);
-
         tmp_results[doctypeFromId(doc.type)].docs.push(doc);
 
       }

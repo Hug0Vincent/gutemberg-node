@@ -31,6 +31,8 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
 
   $('#helpSearch').popup();
 
+  
+
   /** go to cliked entity */
   $scope.goEntity = function(e) {
 
@@ -41,7 +43,6 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
 
     $('.field.active').removeClass('active');
     for(var i in $scope.currentSheet._areas) $('#field-' + ids[1] + '-' + ids[2] + '-' + i).addClass('active');
-
   };
 
   /** go to admin page */
@@ -152,7 +153,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
       }, function(e) {
 
         $rootScope.error = {
-          title: "Oops! Une erreur s'est produite19",
+          title: "Oops! Une erreur s'est produite",
           description: "Impossible d'effectuer la recherche, veuillez ré-essayer.",
           canClose: true
         }
@@ -167,7 +168,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
     }, function(e) {
 
       $rootScope.error = {
-        title: "Oops! Une erreur s'est produite10",
+        title: "Oops! Une erreur s'est produite",
         description: "Impossible d'effectuer la recherche, veuillez ré-essayer.",
         canClose: true
       }
@@ -185,6 +186,27 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
   $scope.goDoc = function(id) {
     $location.path('/documents/' + id);
   }
+
+  /** Set button background according to tiles background (piste d'idées)
+
+
+  function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+    return "'#" + componentToHex(r) + componentToHex(g) + componentToHex(b) + "'";
+}
+
+app.directive('imageCheckbox', function() {
+  return {
+    link: function(scope, attr) {
+      scope.bgCol = rgbToHex($scope.colors[id], $scope.colors[id], $scope.colors[id]);
+      //scope.$apply();
+    }
+  }
+})*/
 
   /**
   *   load document
@@ -227,6 +249,8 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
           g: Math.floor(Math.random()*150 + 50),
           b: Math.floor(Math.random()*150 + 50)
         };
+
+
 
         /** computes sheet boundaries */
         hg = [_sheets[x].points[0].x, _sheets[x].points[0].y];
@@ -398,10 +422,11 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
     $('#loader').hide();
 
     /**
-     * Load similar documents once everything is loaded
+     * Load similar documents once everything is loaded (a regarde comment ces documents sont compares, purement textuel ou au niveau de la structure)
      */
 
      $http.get(API + 'documents/like?size=3&id=' + $scope.params.id, { timeout: API_TIMEOUT }).then(function(r) {
+//   $http.get(API + 'documents/search_similar?type=' + $scope.currentSheet.name + '&text=' + item_title + '&size=3').then(function(r) {
 
        $scope.similar_docs = r.data.result;
        $scope.similarDocsLoaded = true;
@@ -409,7 +434,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
      }, function(r) {
 
        $rootScope.error = {
-         title: "Oops! Une erreur s'est produite1",
+         title: "Oops! Une erreur s'est produite",
          description: "Impossible de charger les documents similaires.",
          canClose: true
        }
@@ -424,7 +449,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
   }, function(r) {
 
     $rootScope.error = {
-      title: "Oops! Une erreur s'est produite2",
+      title: "Oops! Une erreur s'est produite",
       description: "Impossible de charger le document requis.",
       canClose: false
     }
@@ -551,6 +576,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
             sheet = r.data;
             sheet.name = sheettype.name;
 
+
             $scope.document._pages[$scope.currentPage]._sheets.push(sheet);
 
             /** create an area of each type when creating a sheet */
@@ -612,7 +638,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
               }, function(p) {
 
                 $rootScope.error = {
-                  title: "Oops! Une erreur s'est produite1",
+                  title: "Oops! Une erreur s'est produite",
                   description: "Impossible de créer la fiche d'annotations.",
                   canClose: true
                 }
@@ -631,7 +657,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
           }, function(p) {
 
             $rootScope.error = {
-              title: "Oops! Une erreur s'est produite2",
+              title: "Oops! Une erreur s'est produite",
               description: "Impossible de créer la fiche d'annotations.",
               canClose: true
             }
@@ -697,7 +723,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
 
           var sheet_id = "sheet-" + id[1] + "-" + id[2];
 
-          $('#' + sheet_id).popup({ variation: 'very wide', html: $scope.popupContent, on: 'manual', lastResort: true, onVisible: $scope.onVisibleCallback });
+          $('#' + sheet_id).popup({ variation: 'flowing', html: $scope.popupContent, position: 'bottom center' , on: 'manual', lastResort: 'top center', onVisible: $scope.onVisibleCallback  });
           setTimeout(function() {
             $('#' + sheet_id).popup('show');
             $scope.updatePopup();
@@ -869,7 +895,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
       }, function(e) {
 
         $rootScope.error = {
-          title: "Oops! Une erreur s'est produite3",
+          title: "Oops! Une erreur s'est produite",
           description: "Impossible de supprimer la fiche d'annotation",
           canClose: true
         }
@@ -919,7 +945,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
       }, function(e) {
 
         $rootScope.error = {
-          title: "Oops! Une erreur s'est produite23",
+          title: "Oops! Une erreur s'est produite",
           description: "Impossible de supprimer la fiche d'annotation",
           canClose: true
         }
@@ -956,7 +982,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
       }, function(e) {
 
         $rootScope.error = {
-          title: "Oops! Une erreur s'est produite4",
+          title: "Oops! Une erreur s'est produite",
           description: "Impossible de supprimer la fiche d'annotation",
           canClose: true
         }
@@ -978,8 +1004,8 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
       area_id = $(this).attr('aria-data');
       val = $(this).prev().val();
 
-      console.log(area_id);
-      console.log(val);
+      console.log("area_id : " + area_id);
+      console.log("l'annotation est : " + val);
 
       $(this).addClass('loading');
       $scope.addAnnotation(area_id, val);
@@ -1015,7 +1041,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
         }, function(p) {
 
           $rootScope.error = {
-            title: "Oops! Une erreur s'est produite6",
+            title: "Oops! Une erreur s'est produite",
             description: "Impossible de créer le champ",
             canClose: true
           }
@@ -1029,7 +1055,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
       }, function(p) {
 
         $rootScope.error = {
-          title: "Oops! Une erreur s'est produite71",
+          title: "Oops! Une erreur s'est produite",
           description: "Impossible de créer le champ",
           canClose: true
         }
@@ -1046,13 +1072,15 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
   /** generates popup content */
   /** for some reason we couldn't use angular preformated popups because OSD is taking the focus */
 
-  $scope.popupContent = function() {
+
+  /**$scope.popupContent = function() {
 
     console.log("popupContent");
-    console.log("CURRENT: ", $scope.currentSheet);;
+    console.log("CURRENT: ", $scope.currentSheet);
+    
 
-    var html = `<div class="header"><h3>${$scope.currentSheet.name}</h3></div><div id="annotations">
-      <div class="ui feed">`;
+
+    var html = `<div class="header"><h3>${$scope.currentSheet.name}</h3></div><div class="ui two column middle aligned very relaxed stackable grid"><column><div id="annotations">`;
 
     selected = {
       original: $scope.currentSheet,
@@ -1066,7 +1094,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
     }
 
     for(var x in sheetType.fieldTypes) {
-      console.log("SHEET TYPE ", sheetType);
+      console.log("SHHET TYPE ", sheetType);
       selected.fieldTypes.push(sheetType.fieldTypes[x].name);
       selected.areas[sheetType.fieldTypes[x].name] = [];
     }
@@ -1080,7 +1108,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
 
     for(ifield in selected.fieldTypes) {
 
-      html += `<div class="ui horizontal divider"><h4>${selected.fieldTypes[ifield]}${(selected.areas[selected.fieldTypes[ifield]].length > 1) ? 's' : ''}</h4></div>`;
+      html += `<div class="ui list"><h4>${selected.fieldTypes[ifield]}${(selected.areas[selected.fieldTypes[ifield]].length > 1) ? 's' : ''}</h4></div>`;
 
       for(var x in selected.areas[selected.fieldTypes[ifield]]) {
 
@@ -1141,13 +1169,293 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
 
     }
 
-    html += `</div></div>`;
+
+    html += `</div></column>
+    
+    <column>
+      <div class="owl-carousel owl-theme">
+        <div><img src="/images/index.jpg"></img></div>
+        <div><p>Depuis le 1er avril 2010, il fait partie de l'équipe des chroniqueurs de Touche pas à mon poste ! présentée par Cyril Hanouna (sur France 4 d'avril 2010 à mai 2012...</p></div>
+        <div><h3>2</h3></div>
+        <div><h3>3</h3></div>
+      </div>
+    </column></div>
+    <script>
+      $(document).ready(function() {
+ 
+        $(".owl-carousel").owlCarousel({
+            center: true,
+            items:2,
+            loop:false,
+            margin:15,
+            nav:true,
+            arrows : true
+        });
+      });
+    </script>`;
+
+    if($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') html += `<a class="ui button" aria-func="deleteSheet" aria-data="${$scope.currentSheet.id}">Supprimer ${$scope.currentSheet.name}</a>`;
+  
+    return html + `<a class="ui button" onclick="$('.sheet').popup('hide');">Fermer</a>`;
+
+  }**/
+  /**
+  $scope.popupContent = function() {
+
+    console.log("popupContent");
+    console.log("CURRENT: ", $scope.currentSheet);;
+
+//titre fiche annotation
+    var html = `<div class="header"><h3>Fiche d'annotation : ${$scope.currentSheet.name}</h3></div>
+                <div id="annotations">
+                  <div class="ui feed">
+                    <div class="ui internally celled grid">
+                      <div class="row">
+                        <div class="ten wide column">`;
+
+    selected = {
+      original: $scope.currentSheet,
+      areas: {},
+      fieldTypes: []
+    }
+
+    var sheetType;
+    for (var x in DOCUMENT_TYPES[$scope.document.type].sheetTypes) {
+      if(DOCUMENT_TYPES[$scope.document.type].sheetTypes[x].name == $scope.currentSheet.name) sheetType = DOCUMENT_TYPES[$scope.document.type].sheetTypes[x];
+    }
+
+    for(var x in sheetType.fieldTypes) {
+      console.log("SHHET TYPE ", sheetType);
+      selected.fieldTypes.push(sheetType.fieldTypes[x].name);
+      selected.areas[sheetType.fieldTypes[x].name] = [];
+    }
+
+    for(var x in $scope.currentSheet._areas) {
+      var a = $scope.currentSheet._areas[x];
+      console.log("SELECTED ", selected);
+      console.log("A ", a);
+      selected.areas[a.name].push(a);
+    }
+
+    for(ifield in selected.fieldTypes) {
+// titre champ
+      html += `<div class="ui horizontal divider"><h4>${selected.fieldTypes[ifield]}${(selected.areas[selected.fieldTypes[ifield]].length > 1) ? 's' : ''}</h4></div>`;
+
+      for(var x in selected.areas[selected.fieldTypes[ifield]]) {
+
+        var area = selected.areas[selected.fieldTypes[ifield]][x];
+        var annots = area._annotations;
+
+        if(selected.fieldTypes.indexOf(area.name) == -1) continue;
+
+        var fieldType_type = "text";
+        for(var i in DOCUMENT_TYPES[$scope.document.type].fieldType) {
+          if(DOCUMENT_TYPES[$scope.document.type].fieldType[i].name == area.name) fieldType_type = DOCUMENT_TYPES[$scope.document.type].fieldType[i].type;
+        }
+
+        html += `<div class="event">
+          <div class="content">
+            <div class="summary">
+              <div class="header">${area.name}`;
+
+        if($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') html += `&nbsp;<a aria-func="deleteArea" aria-data="${area.id}">(Supprimer)</a>`;
+
+        html += `</div>
+                  <small>${annots.length} annotation${(annots.length > 1) ? 's' : ''}
+                  </small>
+                </div>
+                <div class="extra text">
+                  <ul>`;
+
+        for(var i = 0; i < annots.length; i++) {
+
+          a = annots[i];
+          html += <li>;
+
+          html += <small>${(a.username) ? a.username : DOCUMENT_TYPES[$scope.document.type].defaultContributor};
+          if(a.username && (($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') || ($rootScope.user.loggedIn && $rootScope.user.id == a.userId))) html += `&nbsp;<a aria-func="deleteAnnot" aria-data="${a.id}">(Supprimer)</a>`;
+
+          if(a.date) html += ` - ${new Date(a.date).ddmmyyyy()}`;
+          html += `&nbsp;:
+                </small>`;
+
+          html += `<p>${a.text}</p>
+                </li>`;
+
+        }
+
+        html += `</ul>
+              </div>
+                <div class="meta">`;
+
+        if($rootScope.user.loggedIn) html += `<form class="ui form"><strong>Ajouter une annotation</strong>
+                                                <div class="ui inline field">
+                                                  <input type="${fieldType_type}" alt=""/>&nbsp;
+                                                  <button class="ui primary button" aria-func="addAnnot" aria-data="${area.id}">Ajouter
+                                                    </button>
+                                                </div>
+                                              </form>`;
+
+        html += `</div>
+              </div>
+            </div>`;
+
+      }
+
+      if($rootScope.user.loggedIn && (sheetType.fieldTypes[ifield].number == -1 || sheetType.fieldTypes[ifield].number > selected.areas[selected.fieldTypes[ifield]].length)) html += <button class="ui primary button" aria-func="addField" aria-data="${sheetType.fieldTypes[ifield].id}">Ajouter un ${selected.fieldTypes[ifield]}</button>
+
+    }
+
+    html += `</div>
+              <div class="six wide column">
+                <div class="ui form">
+                  <div class="field">
+                    <label>User Text</label>
+                    <textarea></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
 
     if($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') html += `<a class="ui button" aria-func="deleteSheet" aria-data="${$scope.currentSheet.id}">Supprimer ${$scope.currentSheet.name}</a>`;
 
     return html + `<a class="ui button" onclick="$('.sheet').popup('hide');">Fermer</a>`;
 
   }
+**/
+
+$scope.popupContent = function() {
+
+  console.log("popupContent");
+  console.log("CURRENT: ", $scope.currentSheet);;
+
+//titre fiche annotation
+  var html = `<div class="header"><h3>Fiche d'annotation : ${$scope.currentSheet.name}</h3></div>
+              <div id="annotations">
+                <div class="ui feed">
+                  <div class="ui internally celled grid">
+                    <div class="row">
+                      <div class="ten wide column">`;
+
+  selected = {
+    original: $scope.currentSheet,
+    areas: {},
+    fieldTypes: []
+  }
+
+  var sheetType;
+  for (var x in DOCUMENT_TYPES[$scope.document.type].sheetTypes) {
+    if(DOCUMENT_TYPES[$scope.document.type].sheetTypes[x].name == $scope.currentSheet.name) sheetType = DOCUMENT_TYPES[$scope.document.type].sheetTypes[x];
+  }
+
+  for(var x in sheetType.fieldTypes) {
+    console.log("SHHET TYPE ", sheetType);
+    selected.fieldTypes.push(sheetType.fieldTypes[x].name);
+    selected.areas[sheetType.fieldTypes[x].name] = [];
+  }
+
+  for(var x in $scope.currentSheet._areas) {
+    var a = $scope.currentSheet._areas[x];
+    console.log("SELECTED ", selected);
+    console.log("A ", a);
+    selected.areas[a.name].push(a);
+  }
+
+  html += `<div class="ui grid">`;
+
+  for(ifield in selected.fieldTypes) {
+    for(var x in selected.areas[selected.fieldTypes[ifield]]) {
+
+      var area = selected.areas[selected.fieldTypes[ifield]][x];
+      var annots = area._annotations;
+
+      if(selected.fieldTypes.indexOf(area.name) == -1) continue;
+
+      var fieldType_type = "text";
+      for(var i in DOCUMENT_TYPES[$scope.document.type].fieldType) {
+        if(DOCUMENT_TYPES[$scope.document.type].fieldType[i].name == area.name) fieldType_type = DOCUMENT_TYPES[$scope.document.type].fieldType[i].type;
+      }
+
+      html += `<div class="center aligned four wide column">
+                <a class=" header">${area.name}
+                </a>
+                <div class="fluid ui basic button">`;
+
+
+        a = annots[0];
+
+        /**
+        prend les 20 premiers caractere d'une annotation et coupe en deux les mots de plus de 10 lettres
+        }*/
+        var str1 = a.text.substr(0, 20);
+        if(a.text.length>20)str1+="...";
+        var str2 = str1.charAt(0).toUpperCase() + str1.toLowerCase().slice(1);
+        var str2split = str2.split(" ");
+        var str3 = "";
+        var comptmota = 0;
+        while(comptmota<str2split.length){
+          if(str2split[comptmota].length<=10){
+            str3 += str2split[comptmota] + " ";
+          }
+          if(str2split[comptmota].length>10){
+            str3 += str2split[comptmota].substr(0, 10) + "- " + str2split[comptmota].slice(10) + " ";
+          }
+          comptmota++;
+        }
+
+
+
+        html += `${str3}
+                 </div>
+                </div>`;
+
+    }
+  }
+
+  var heightRightcolumn = "\"" + (Math.trunc((selected.fieldTypes.length / 4)+0.99)*4) + "\"";
+
+      html += `  </div>
+                </div>
+              <div class="six wide column">
+                <div class="owl-carousel owl-theme">
+                  <div><p>Depuis le 1er avril 2010, il fait partie de l'équipe des chroniqueurs de Touche pas à mon poste ! présentée par Cyril Hanouna (sur France 4 d'avril 2010 à mai 2012...</p></div>
+                  <div><p>Depuis le 1er avril 2010, il fait partie de l'équipe des chroniqueurs de Touche pas à mon poste ! présentée par Cyril Hanouna (sur France 4 d'avril 2010 à mai 2012...</p></div>
+                  <div><p>Depuis le 1er avril 2010, il fait partie de l'équipe des chroniqueurs de Touche pas à mon poste ! présentée par Cyril Hanouna (sur France 4 d'avril 2010 à mai 2012...</p></div>
+                  <div><p>Depuis le 1er avril 2010, il fait partie de l'équipe des chroniqueurs de Touche pas à mon poste ! présentée par Cyril Hanouna (sur France 4 d'avril 2010 à mai 2012...</p></div>
+                  <div class="ui form">
+                    <div class="field">
+                      <label>Text</label>
+                      <textarea rows=${heightRightcolumn}></textarea>
+                    </div>
+                  </div>
+                 </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+
+  if($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') html += `<a class="ui button" aria-func="deleteSheet" aria-data="${$scope.currentSheet.id}">Supprimer ${$scope.currentSheet.name}</a>`;
+
+  return html + `<a class="ui button" onclick="$('.sheet').popup('hide');">Fermer</a>
+  <script>
+      $(document).ready(function() {
+ 
+        $(".owl-carousel").owlCarousel({
+            center: true,
+            items:1,
+            loop:false,
+            margin:15,
+            nav:true,
+            arrows : true
+        });
+      });
+    </script>`;
+
+}
 
   /** updates popup content */
 
@@ -1157,11 +1465,12 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
     var html = $scope.popupContent();
 
     var ids = $scope.currentId.split("-");
-
+    console.log("ID : ", ids);
     $('#sheet-' + ids[1] + '-' + ids[2]).popup('change content', html);
     $scope.onVisibleCallback();
 
   };
+
 
   /** displays popup */
 
@@ -1221,9 +1530,10 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
         }
 
       }, function(p) {
+        console.log("probleme : " + $rootScope.auth_token);
 
         $rootScope.error = {
-          title: "Oops! Une erreur s'est produite76 "+$rootScope.user.username,
+          title: "Oops! Une erreur s'est produite",
           description: "Impossible d'ajouter l'annotation.",
           canClose: true
         }

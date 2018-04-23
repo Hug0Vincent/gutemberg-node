@@ -1,0 +1,1780 @@
+2018-04-19 13:33:05,464 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
+2018-04-19 13:33:05,472 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
+[GCC 4.9.2]
+2018-04-19 13:33:05,473 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.87-linuxkit-aufs-x86_64-with-debian-8.7
+2018-04-19 13:33:05,473 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
+2018-04-19 13:33:05,474 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
+2018-04-19 13:33:05,705 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
+2018-04-19 13:33:05,706 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0
+2018-04-19 13:33:05,709 [ERROR] mongo_connector.connector:297 - Cannot read oplog progress file "/home/gutemberg/dev/gutemberg-node/oplog.timestamp". It may be corrupt after Mongo Connector was shut downuncleanly. You can try to recover from a backup file (may be called "/home/gutemberg/dev/gutemberg-node/oplog.timestamp.backup") or create a new progress file starting at the current moment in time by running mongo-connector --no-dump <other options>. You may also be trying to read an oplog progress file created with the old format for sharded clusters. See https://github.com/10gen-labs/mongo-connector/wiki/Oplog-Progress-File for complete documentation.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/mongo_connector/connector.py", line 284, in read_oplog_progress
+    data = json.load(progress_file)
+  File "/usr/lib/python2.7/json/__init__.py", line 290, in load
+    **kw)
+  File "/usr/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+2018-04-19 13:33:05,878 [WARNING] elasticsearch:96 - POST http://localhost:9200/_bulk [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:05,885 [WARNING] elasticsearch:96 - POST http://localhost:9200/_bulk [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:05,887 [WARNING] elasticsearch:96 - POST http://localhost:9200/_bulk [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:05,889 [WARNING] elasticsearch:96 - POST http://localhost:9200/_bulk [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:05,891 [CRITICAL] mongo_connector.oplog_manager:670 - Exception during collection dump
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/mongo_connector/oplog_manager.py", line 625, in do_dump
+    upsert_all(dm)
+  File "/usr/local/lib/python2.7/dist-packages/mongo_connector/oplog_manager.py", line 611, in upsert_all
+    mapped_ns, long_ts)
+  File "/usr/local/lib/python2.7/dist-packages/mongo_connector/util.py", line 46, in wrapped
+    reraise(new_type, exc_value, exc_tb)
+  File "/usr/local/lib/python2.7/dist-packages/mongo_connector/util.py", line 35, in wrapped
+    return f(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/mongo_connector/doc_managers/elastic2_doc_manager.py", line 367, in bulk_upsert
+    for ok, resp in responses:
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+ConnectionFailed: ConnectionError(('Connection aborted.', error(99, 'Cannot assign requested address'))) caused by: ProtocolError(('Connection aborted.', error(99, 'Cannot assign requested address')))
+2018-04-19 13:33:05,895 [ERROR] mongo_connector.oplog_manager:678 - OplogThread: Failed during dump collection cannot recover! Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True, replicaset=u'myDevReplSet'), u'local'), u'oplog.rs')
+2018-04-19 13:33:06,759 [ERROR] mongo_connector.connector:398 - MongoConnector: OplogThread <OplogThread(Thread-3, started 139915295696640)> unexpectedly stopped! Shutting down
+2018-04-19 13:33:07,464 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:07,465 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:07,466 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:07,467 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:08,469 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:08,470 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:08,471 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:08,472 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:09,474 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:09,475 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:09,476 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:09,477 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:10,480 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:10,486 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.005s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:10,487 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:10,488 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:11,490 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:11,491 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:11,492 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:11,494 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:12,496 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:12,497 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:12,498 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:12,499 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:13,503 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:13,504 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:13,505 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:13,506 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:14,508 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:14,509 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:14,512 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:14,513 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:15,516 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:15,518 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:15,518 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:15,519 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:16,522 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:16,524 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:16,525 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:16,526 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:17,531 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:17,532 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:17,532 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:17,533 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:18,537 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:18,538 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:18,539 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:18,540 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:19,544 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:19,545 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:19,546 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:19,547 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:20,552 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.001s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:20,553 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:20,554 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))
+2018-04-19 13:33:20,555 [WARNING] elasticsearch:96 - POST http://localhost:9200/_refresh [status:N/A request:0.000s]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/elasticsearch/connection/http_urllib3.py", line 114, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 559, in urlopen
+    _pool=self, _stacktrace=stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/retry.py", line 223, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 516, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python2.7/dist-packages/urllib3/connectionpool.py", line 308, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python2.7/httplib.py", line 1039, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python2.7/httplib.py", line 1073, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python2.7/httplib.py", line 1035, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 879, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 154, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python2.7/dist-packages/urllib3/connection.py", line 133, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python2.7/dist-packages/urllib3/util/connection.py", line 87, in create_connection
+    raise err
+ProtocolError: ('Connection aborted.', error(99, 'Cannot assign requested address'))

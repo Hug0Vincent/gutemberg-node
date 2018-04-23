@@ -19,6 +19,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
   $scope.fields = {};
   $scope.colors = {};
   $scope.fieldsShown = [];
+  $scope._resultPremier  = [];
   $scope.editMode = false;
   $scope.readMode = 0;
   $scope.addAnnotMode = false;
@@ -28,6 +29,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
   $scope.toSearch = "";
   $scope.entities = [];
   $scope.real_document_type = null;
+
 
   $('#helpSearch').popup();
 
@@ -188,17 +190,13 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
   }
 
   /** Set button background according to tiles background (piste d'idées)
-
-
   function componentToHex(c) {
     var hex = c.toString(16);
     return hex.length == 1 ? "0" + hex : hex;
 }
-
 function rgbToHex(r, g, b) {
     return "'#" + componentToHex(r) + componentToHex(g) + componentToHex(b) + "'";
 }
-
 app.directive('imageCheckbox', function() {
   return {
     link: function(scope, attr) {
@@ -426,9 +424,15 @@ app.directive('imageCheckbox', function() {
      */
 
      $http.get(API + 'documents/like?size=3&id=' + $scope.params.id, { timeout: API_TIMEOUT }).then(function(r) {
+// $scope.params.id = id du document similaire
 //   $http.get(API + 'documents/search_similar?type=' + $scope.currentSheet.name + '&text=' + item_title + '&size=3').then(function(r) {
 
+
+       //$scope.similar_docs = r.data.result + $scope._results;
        $scope.similar_docs = r.data.result;
+
+
+       console.log(" YOOOOOO !!!!!!!" + $scope.similar_docs);
        $scope.similarDocsLoaded = true;
 
      }, function(r) {
@@ -1387,30 +1391,35 @@ $scope.popupContent = function() {
 
         a = annots[0];
 
-        /**
-        prend les 20 premiers caractere d'une annotation et coupe en deux les mots de plus de 10 lettres
-        }*/
-        var str1 = a.text.substr(0, 20);
-        if(a.text.length>20)str1+="...";
-        var str2 = str1.charAt(0).toUpperCase() + str1.toLowerCase().slice(1);
-        var str2split = str2.split(" ");
-        var str3 = "";
-        var comptmota = 0;
-        while(comptmota<str2split.length){
-          if(str2split[comptmota].length<=10){
-            str3 += str2split[comptmota] + " ";
+        
+        //prend les 20 premiers caractere d'une annotation et coupe en deux les mots de plus de 10 lettres
+        if (a != null){
+          var str1 = a.text.substr(0, 20);
+          if(a.text.length>20)str1+="...";
+          var str2 = str1.charAt(0).toUpperCase() + str1.toLowerCase().slice(1);
+          var str2split = str2.split(" ");
+          var str3 = "";
+          var comptmota = 0;
+          while(comptmota<str2split.length){
+            if(str2split[comptmota].length<=10){
+                str3 += str2split[comptmota] + " ";
+            }
+            if(str2split[comptmota].length>10){
+              str3 += str2split[comptmota].substr(0, 10) + "- " + str2split[comptmota].slice(10) + " ";
+            }
+            comptmota++;
           }
-          if(str2split[comptmota].length>10){
-            str3 += str2split[comptmota].substr(0, 10) + "- " + str2split[comptmota].slice(10) + " ";
-          }
-          comptmota++;
-        }
 
 
 
-        html += `${str3}
+          html += `${str3}
                  </div>
                 </div>`;
+        }
+        else {
+          html += `</div>
+                </div>`;
+        }
 
     }
   }

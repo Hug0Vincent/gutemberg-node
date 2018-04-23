@@ -227,7 +227,7 @@
 						"number": 1
 					},
 					{
-						"name": "Nom du parrain",
+						"name": "Nom(s) du parrain",
 						"required": false,
 						"type": "text",
 						"number": 1
@@ -239,7 +239,7 @@
 						"number": 1
 					},
 					{
-						"name": "Prénom(s) de la marraine",
+						"name": "Nom(s) de la marraine",
 						"required": false,
 						"type": "text",
 						"number": 1

@@ -150,6 +150,83 @@
 				]
 			},
 			{
+				"name": "Fiche personnelle",
+				"fieldType":[
+					{
+						"name": "Matricule",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Mobilisation",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Etat civil",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Signalement",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Canton",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Degré",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Décision",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Informations",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Habitation",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Secret gauche",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Secret droit",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			},
+			{
 				"name": "Affectation",
 				"fieldType":[
 					{
@@ -197,11 +274,36 @@
 			},
 			{
 				"name": "Secret gauche",
-				"fieldType":[]
+				"fieldType":[
+					{
+						"name": "Commentaire",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			},
+			{
+				"name": "Conseil de révision",
+				"fieldType":[
+					{
+						"name": "Décision",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
 			},
 			{
 				"name": "Secret droit",
-				"fieldType":[]
+				"fieldType":[
+					{
+						"name": "Commentaire",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
 			}
     ]
 	}

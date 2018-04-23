@@ -43,13 +43,13 @@
 						"number": 1
 					},
 					{
-						"name": "Prenom(s) enfant(s)",
+						"name": "Prénoms",
 						"required": true,
 						"type": "text",
 						"number": 1
 					},
 					{
-						"name": "Numero de dossier",
+						"name": "Numéro du dossier",
 						"required": true,
 						"type": "text",
 						"number": 1

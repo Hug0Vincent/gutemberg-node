@@ -35,6 +35,8 @@ app.controller("searchController", function($scope, $rootScope, $location, $rout
     z++;
   }
 
+
+
   /** change date for the advanced search
   **  don't know why it doesn't work without that function */
 
@@ -90,12 +92,16 @@ app.controller("searchController", function($scope, $rootScope, $location, $rout
   $scope.results = function(r) {
 
     if (r.hits.total > 0) { // Checks if there is at least 1 document returned
-
       tmp_results = [];
-      for(var i in DOCUMENT_TYPES) tmp_results[i] = { annots:[], docs:[] };
+
+
+      for(var i in DOCUMENT_TYPES) {
+        tmp_results[i] = { annots:[], docs:[] };
+
+      }
+
 
       for(var i = 0; i < r.hits.hits.doc.length; i++) {
-
         var doc = r.hits.hits.doc[i];
         tmp_results[doctypeFromId(doc.type)].docs.push(doc);
 
@@ -132,11 +138,13 @@ app.controller("searchController", function($scope, $rootScope, $location, $rout
       $scope.nb = r.hits.hits.annot.length + r.hits.hits.doc.length;
       $scope._results = tmp_results;
 
+      console.log("scope result est pas nul    " + tmp_results);
+
     } else {
 
       $scope.nb = 0;
       $scope._results = null;
-
+      console.log("scope result est nul    " + $scope._results);
     }
 
   };

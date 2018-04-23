@@ -50,7 +50,7 @@ app.controller("homeController", function($scope, $rootScope, $location) {
 
     } else path = '/search/' + $scope.terms;
 
-    console.log(path);
+    console.log("path       " + path);
     $location.path(path);
 
   };

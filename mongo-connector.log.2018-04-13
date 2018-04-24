@@ -1,8 +1,0 @@
-2018-04-13 13:16:38,275 [ALWAYS] mongo_connector.connector:51 - Starting mongo-connector version: 2.5.1
-2018-04-13 13:16:38,282 [ALWAYS] mongo_connector.connector:51 - Python version: 2.7.9 (default, Jun 29 2016, 13:08:31) 
-[GCC 4.9.2]
-2018-04-13 13:16:38,283 [ALWAYS] mongo_connector.connector:51 - Platform: Linux-4.9.60-linuxkit-aufs-x86_64-with-debian-8.7
-2018-04-13 13:16:38,283 [ALWAYS] mongo_connector.connector:51 - pymongo version: 3.4.0
-2018-04-13 13:16:38,284 [WARNING] mongo_connector.connector:1260 - pymongo version 3.4.0 was installed without the C extensions. "InvalidBSON: Date value out of range" errors may occur if there are documents with BSON Datetimes that represent times outside of Python's datetime limit.
-2018-04-13 13:16:38,412 [ALWAYS] mongo_connector.connector:51 - Source MongoDB version: 3.4.4
-2018-04-13 13:16:38,412 [ALWAYS] mongo_connector.connector:51 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 0.3.0

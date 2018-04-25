@@ -29,6 +29,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
   $scope.toSearch = "";
   $scope.entities = [];
   $scope.real_document_type = null;
+  var annot;
 
 
   $('#helpSearch').popup();
@@ -727,7 +728,7 @@ app.directive('imageCheckbox', function() {
 
           var sheet_id = "sheet-" + id[1] + "-" + id[2];
 
-          $('#' + sheet_id).popup({ variation: 'very wide', html: $scope.popupContent, position: 'bottom center' , on: 'manual', lastResort: 'top center', onVisible: $scope.onVisibleCallback  });
+          $('#' + sheet_id).popup({ variation: 'flowing', html: $scope.popupContent, position: 'bottom center' , on: 'manual', lastResort: 'top center', onVisible: $scope.onVisibleCallback  });
           setTimeout(function() {
             $('#' + sheet_id).popup('show');
             $scope.updatePopup();
@@ -859,7 +860,11 @@ app.directive('imageCheckbox', function() {
   $scope.onVisibleCallback = function($module) {
 
     console.log("visible");
-
+    $('[aria-func=updateSlider]').off("click");
+        $('[aria-func=updateSlider]').click(function(){
+          annot = maMap.get($(this)[0].id);
+          $scope.updatePopup();
+        })
     /** add delete sheet buttons event listeners */
     $('[aria-func=deleteSheet]').off("click");
     $('[aria-func=deleteSheet]').click(function() {
@@ -1077,132 +1082,7 @@ app.directive('imageCheckbox', function() {
   /** for some reason we couldn't use angular preformated popups because OSD is taking the focus */
 
 
-  /**$scope.popupContent = function() {
 
-    console.log("popupContent");
-    console.log("CURRENT: ", $scope.currentSheet);
-
-
-
-    var html = `<div class="header"><h3>${$scope.currentSheet.name}</h3></div><div class="ui two column middle aligned very relaxed stackable grid"><column><div id="annotations">`;
-
-    selected = {
-      original: $scope.currentSheet,
-      areas: {},
-      fieldTypes: []
-    }
-
-    var sheetType;
-    for (var x in DOCUMENT_TYPES[$scope.document.type].sheetTypes) {
-      if(DOCUMENT_TYPES[$scope.document.type].sheetTypes[x].name == $scope.currentSheet.name) sheetType = DOCUMENT_TYPES[$scope.document.type].sheetTypes[x];
-    }
-
-    for(var x in sheetType.fieldTypes) {
-      console.log("SHHET TYPE ", sheetType);
-      selected.fieldTypes.push(sheetType.fieldTypes[x].name);
-      selected.areas[sheetType.fieldTypes[x].name] = [];
-    }
-
-    for(var x in $scope.currentSheet._areas) {
-      var a = $scope.currentSheet._areas[x];
-      console.log("SELECTED ", selected);
-      console.log("A ", a);
-      selected.areas[a.name].push(a);
-    }
-
-    for(ifield in selected.fieldTypes) {
-
-      html += `<div class="ui list"><h4>${selected.fieldTypes[ifield]}${(selected.areas[selected.fieldTypes[ifield]].length > 1) ? 's' : ''}</h4></div>`;
-
-      for(var x in selected.areas[selected.fieldTypes[ifield]]) {
-
-        var area = selected.areas[selected.fieldTypes[ifield]][x];
-        var annots = area._annotations;
-
-        if(selected.fieldTypes.indexOf(area.name) == -1) continue;
-
-        var fieldType_type = "text";
-        for(var i in DOCUMENT_TYPES[$scope.document.type].fieldType) {
-          if(DOCUMENT_TYPES[$scope.document.type].fieldType[i].name == area.name) fieldType_type = DOCUMENT_TYPES[$scope.document.type].fieldType[i].type;
-        }
-
-        html += `<div class="event">
-          <div class="content">
-            <div class="summary">
-              <div class="header">${area.name}`;
-
-        if($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') html += `&nbsp;<a aria-func="deleteArea" aria-data="${area.id}">(Supprimer)</a>`;
-
-        html += `</div>
-              <small>${annots.length} annotation${(annots.length > 1) ? 's' : ''}</small>
-            </div>
-            <div class="extra text">
-              <ul>`;
-
-        for(var i = 0; i < annots.length; i++) {
-
-          a = annots[i];
-          html += `<li>`;
-
-          html += `<small>${(a.username) ? a.username : DOCUMENT_TYPES[$scope.document.type].defaultContributor}`;
-          if(a.username && (($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') || ($rootScope.user.loggedIn && $rootScope.user.id == a.userId))) html += `&nbsp;<a aria-func="deleteAnnot" aria-data="${a.id}">(Supprimer)</a>`;
-
-          if(a.date) html += ` - ${new Date(a.date).ddmmyyyy()}`;
-          html += `&nbsp;:</small>`;
-
-          html += `<p>${a.text}</p>
-          </li>`;
-
-        }
-
-        html += `</ul>
-            </div>
-            <div class="meta">`;
-
-        if($rootScope.user.loggedIn) html += `<form class="ui form"><strong>Ajouter une annotation</strong><div class="ui inline field">
-              <input type="${fieldType_type}" alt="" />&nbsp;<button class="ui primary button" aria-func="addAnnot" aria-data="${area.id}">Ajouter</button>
-            </div></form>`;
-
-        html += `</div>
-          </div>
-        </div>`;
-
-      }
-
-      if($rootScope.user.loggedIn && (sheetType.fieldTypes[ifield].number == -1 || sheetType.fieldTypes[ifield].number > selected.areas[selected.fieldTypes[ifield]].length)) html += `<button class="ui primary button" aria-func="addField" aria-data="${sheetType.fieldTypes[ifield].id}">Ajouter un ${selected.fieldTypes[ifield]}</button>`
-
-    }
-
-
-    html += `</div></column>
-
-    <column>
-      <div class="owl-carousel owl-theme">
-        <div><img src="/images/index.jpg"></img></div>
-        <div><p>Depuis le 1er avril 2010, il fait partie de l'équipe des chroniqueurs de Touche pas à mon poste ! présentée par Cyril Hanouna (sur France 4 d'avril 2010 à mai 2012...</p></div>
-        <div><h3>2</h3></div>
-        <div><h3>3</h3></div>
-      </div>
-    </column></div>
-    <script>
-      $(document).ready(function() {
-
-        $(".owl-carousel").owlCarousel({
-            center: true,
-            items:2,
-            loop:false,
-            margin:15,
-            nav:true,
-            arrows : true
-        });
-      });
-    </script>`;
-
-    if($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') html += `<a class="ui button" aria-func="deleteSheet" aria-data="${$scope.currentSheet.id}">Supprimer ${$scope.currentSheet.name}</a>`;
-
-    return html + `<a class="ui button" onclick="$('.sheet').popup('hide');">Fermer</a>`;
-
-  }**/
   /**
   $scope.popupContent = function() {
 
@@ -1331,6 +1211,14 @@ app.directive('imageCheckbox', function() {
   }
 **/
 
+
+
+
+
+
+
+
+
 $scope.popupContent = function() {
 
   console.log("popupContent");
@@ -1369,26 +1257,24 @@ $scope.popupContent = function() {
   }
 
   html += `<div class="ui grid">`;
-  var firstchamp = 0;
-  var annotfirstchamp;
+  maMap = new Map();
   for(ifield in selected.fieldTypes) {
     for(var x in selected.areas[selected.fieldTypes[ifield]]) {
 
       var area = selected.areas[selected.fieldTypes[ifield]][x];
       var annots = area._annotations;
-      var annotfirstchamp = annots;
-      firstchamp++;
       if(selected.fieldTypes.indexOf(area.name) == -1) continue;
 
       var fieldType_type = "text";
       for(var i in DOCUMENT_TYPES[$scope.document.type].fieldType) {
         if(DOCUMENT_TYPES[$scope.document.type].fieldType[i].name == area.name) fieldType_type = DOCUMENT_TYPES[$scope.document.type].fieldType[i].type;
       }
-
+      var id = ""+ifield+x;
+      maMap.set(id, annots);
       html += `<div class="center aligned five wide column">
                 <a class=" header">${area.name}
                 </a>
-                <div class="fluid ui compact basic button">`;
+                <div class="fluid ui compact basic button" id="${ifield}${x}" aria-func="updateSlider">`;
 
 
         a = annots[0];
@@ -1416,52 +1302,49 @@ $scope.popupContent = function() {
 
           html += `${str3}
                  </div>`;
-  if($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') html += `&nbsp;<a aria-func="deleteArea" aria-data="${area.id}"><font size="1">(Supprimer)</font></a>`;
+          if($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') html += `&nbsp;<a aria-func="deleteArea" aria-data="${area.id}"><font size="1">(Supprimer)</font></a>`;
 
-          html +=` </div>`;
+                  html +=` </div>`;
         }
         else {
-          html += `</div>`;
-
-if($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') html += `&nbsp;<a aria-func="deleteArea" aria-data="${area.id}"><font size="1">(Supprimer)</font></a>`;
-
-   html +=`</div>`;
+                html += `</div>`;
+          if($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') html += `&nbsp;<a aria-func="deleteArea" aria-data="${area.id}"><font size="1">(Supprimer)</font></a>`;
+                html +=`</div>`;
         }
 
-    }
+       }
+       if($rootScope.user.loggedIn && (sheetType.fieldTypes[ifield].number == -1 || sheetType.fieldTypes[ifield].number > selected.areas[selected.fieldTypes[ifield]].length)){
+         html += `<div class="center aligned five wide column">
+                    <a class=" header">${selected.fieldTypes[ifield]}${(selected.areas[selected.fieldTypes[ifield]].length > 1) ? 's' : ''}
+                    </a>
+                    <div class="ui primary button" aria-func="addField" aria-data="${sheetType.fieldTypes[ifield].id}">Ajouter champ "${selected.fieldTypes[ifield]}"</div>
+                  </div>`;
+        }
   }
-
-  var heightRightcolumn = "\"" + (Math.trunc((selected.fieldTypes.length / 4)+0.99)*4) + "\"";
 
       html += `  </div>
                 </div>
               <div class="six wide column">
                 <div class="owl-carousel owl-theme">`;
 
-      var comptannot = 0;
-      var strannot = "";
-      if (annotfirstchamp!=null){
-        while(comptannot < annotfirstchamp.length){
-            strannot = annotfirstchamp[comptannot].text;
-            comptannot++;
+      for(var i in annot){
             html += ` <div class="item" data-merge="1">
-                        <b><font size="2">Interprétation n°${comptannot}</font></b>
-                        <small> par ${(annotfirstchamp.username) ? annotfirstchamp.username : DOCUMENT_TYPES[$scope.document.type].defaultContributor}</small>`;
+                        <b><font size="2">Interprétation n°${i+1}</font></b>
+                        <small> par ${(annot[i].username) ? annot[i].username : DOCUMENT_TYPES[$scope.document.type].defaultContributor}</small>`;
 
-if(($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') || ($rootScope.user.loggedIn && $rootScope.user.id == annotfirstchamp.userId)) html += `<br />&nbsp;<a aria-func="deleteAnnot" aria-data="${annotfirstchamp.id}"><font size="1">(Supprimer)</font></a>`;
-
+if(annot[i].username && (($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') || ($rootScope.user.loggedIn && $rootScope.user.id == annot[i].userId))) html +=  `&nbsp;<a aria-func="deleteAnnot" aria-data="${annot[i].id}">(Supprimer)</a> `;
             html += `<div class="ui segment">
-                      <div><p>${strannot}</p></div>
+                      <div><p>${annot[i].text}</p></div>
                     </div>
                   </div>`;
         }
-      }
+      
 
 
 
       if($rootScope.user.loggedIn) html += `<form class="ui form"><strong>Ajouter une interprétation</strong>
                                               <div class="ui inline field">
-                                                <textarea type="${fieldType_type}" alt=""/>&nbsp;
+                                                <input type="${fieldType_type}" alt=""/>&nbsp;
                                                 <button class="ui primary button" aria-func="addAnnot" aria-data="${area.id}">Ajouter
                                                   </button>
                                               </div>

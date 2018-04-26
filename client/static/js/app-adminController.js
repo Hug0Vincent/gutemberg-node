@@ -22,6 +22,7 @@ app.controller("adminController", function($scope, $rootScope, $location, $http,
     /** load users */
 
     $http.get(API + 'myusers?access_token=' + $rootScope.auth_token).then(function(r) {
+      console.log($rootScope.auth_token);
       $scope.users = r.data;
     }, function(e) {
 
@@ -75,6 +76,16 @@ app.controller("adminController", function($scope, $rootScope, $location, $http,
       }).modal('show');
 
     });
+  }
+
+  /** go to admin page */
+  $scope.admin_annot = function() {
+    $location.path('/admin_annot');
+  }
+
+  /** go to admin page */
+  $scope.admin_document = function() {
+    $location.path('/admin_document');
   }
 
   /** promote user to given type */

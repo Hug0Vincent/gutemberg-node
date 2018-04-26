@@ -274,4 +274,16 @@ module.exports = function(Documenttype) {
 
   } //end function
 
+
+  Documenttype.remoteMethod('load_json', {
+    accepts: { arg: 'data', type: 'object', http: { source: 'body' } },
+    description: "Recursively adds manual annotation to the document",
+    returns: {
+      arg: 'body',
+      root: true,
+      type: 'object'
+    }
+  });
+
+
 };

@@ -11,6 +11,7 @@
 
 var API = '/api/';
 var API_TIMEOUT = 3*1000;
+var UPLOAD_URL = 'http://localhost:8900/server';
 var IMG_URL = 'http://localhost:8900/images/';
 var DOCUMENT_TYPES = {};
 
@@ -40,8 +41,9 @@ new Promise(function(fullfill, reject) {
 * Gutemberg
 **/
 
-var app = angular.module("app", ['ngSanitize', 'ngRoute', 'LocalStorageModule']);
+var app = angular.module("app", ['ngSanitize', 'ngRoute', 'LocalStorageModule', 'angularFileUpload']);
 var load_promises = [];
+
 
 app.config(function($routeProvider, $locationProvider, $httpProvider) {
 
@@ -71,6 +73,9 @@ app.config(function($routeProvider, $locationProvider, $httpProvider) {
   }).when('/admin', {
     templateUrl: 'admin.html',
     controller: 'adminController'
+  }).when('/admin_document', {
+    templateUrl: 'admin_document.html',
+    controller: 'adminDocController'
   }).otherwise({
     redirectTo: '/404'
   });
@@ -89,10 +94,10 @@ app.run(function($rootScope, $http, localStorageService) {
 
   $rootScope.user = {
     loggedIn: true,
-    email: 'cadioumaxime@gmail.com',
-    password: '1234',
-    name: 'Maxime',
-    job: 'a',
+    email: 'nolwenn.olivier@live.fr',
+    password: '0000',
+    name: 'Nolwenn',
+    job: 'Student',
     type: 'Administrator'
   };
 

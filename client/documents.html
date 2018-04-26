@@ -26,11 +26,69 @@
               &nbsp;&nbsp;<span id="helpSearch" data-content="Les résultats de votre recherche seront entourés en rouge dans la visionneuse." data-position="right center"><i class="help icon"></i></span>
           </div>
 
-          <br /><br />
+          <br /><div class="ui divider"></div>
 
-          <h4>Documents similaires</h4><br />
-          <div class="ui cards">
-            <div class="card" ng-if="!similarDocsLoaded">
+
+          <!--section fiche d'annotation de la feuille-->
+          <h6>Fiches d'annotations</h6>
+
+          <div ng-repeat="sheetType in real_document_type.sheetTypes">
+
+            <h4>{{ sheetType.name }}<span ng-if="entities[currentPage][sheetType.name].length > 1">s</span></h4>
+
+              <div class="fluid ui basic button" ng-if="entities[currentPage][sheetType.name].length == 0">
+                <div class="content">
+                  <aucun> Aucun <lower>{{ sheetType.name }}</lower> sur cette page.</aucun>
+                </div>
+              </div>
+              <div ng-repeat="i in entities[currentPage][sheetType.name]">
+                <!-- <div class="fluid ui animated fade basic button" ng-click="goEntity(i)" image-checkbox ng-style="{'background-color':bgCol}" tabindex="0"> -->
+                <div class="fluid ui animated fade basic button" ng-click="goEntity(i)" image-checkbox ng-style="{'background-color':bgCol}" tabindex="0">
+                <div class="visible content">
+                  <section ng-if="i.title != '' ">
+                    <div class="header">
+                      <a>{{ i.title }}</a>
+                    </div>
+                  </section>
+                  <section ng-if="i.title == '' ">
+                    <div class="meta">
+                      <a>{{ i.summary }}</a>
+                    </div>
+                  </section>
+                </div>
+                <div class="hidden content">
+                  <section ng-if="i.title != '' ">
+                    <div class="header">
+                      <c>{{ i.title }}</c>
+                    </div>
+                  </section>
+                  <section ng-if="i.title == '' ">
+                    <div class="meta">
+                      <c>{{ i.summary }}</c>
+                    </div>
+                  </section>
+                </div>
+              </div>
+                <br />
+              </div>
+              <br />
+          </div>
+
+
+          <!--bouton Ajouter une fiche-->
+          <a id="btn-add" ng-show="user.loggedIn" data-content="{{ (addMode) ? 'Quitter le mode d\'ajout' : 'Ajouter une fiche d\'annotation' }}" class="item" ng-click="toggleAddMode()">
+            <div class="ui button">
+              <i class="large plus icon" ng-class="(addMode) ? 'Cancel' : 'Write'"></i> Ajouter une fiche
+            </div>
+          </a>
+
+          <br /><br /><div class="ui divider"></div>
+
+
+
+          <!--section document similaire-->
+          <h6>Documents similaires</h6>
+            <div class="fluid ui basic button" ng-if="!similarDocsLoaded">
               <div class="content">
                 <br />
 
@@ -41,12 +99,12 @@
                 <br />
               </div>
             </div>
-            <div class="card" ng-if="similarDocsLoaded && similar_docs.length == 0">
+            <div class="fluid ui basic button" ng-if="similarDocsLoaded && similar_docs.length == 0">
               <div class="content">
-                Aucun document similaire trouvé.
+                <aucun>Aucun document similaire trouvé.</aucun>
               </div>
             </div>
-            <div class="card" ng-repeat="doc in similar_docs" ng-click="goDoc(doc.id)">
+            <div class="fluid ui basic button" ng-repeat="doc in similar_docs" ng-click="goDoc(doc.id)">
               <div class="content">
                 <div class="header">
                   <a>{{ doc.title }}</a>
@@ -56,81 +114,93 @@
                 </div>
               </div>
             </div>
-          </div>
+
+
+            <br /><div class="ui divider"></div>
+
+
 
           <div ng-if="selectedItem.type"-->
 
-            <br /><br />
-
-            <h4>{{ selectedItem.type }} sélectionné</h4>
-            <div class="ui cards">
-              <div class="card" ng-click="showPopup()">
-                <div class="content">
-                  <div class="header">
-                    <a>{{ selectedItem.title }}</a>
-                  </div>
-                  <div class="meta">
-                    {{ selectedItem.summary }}
-                  </div>
+            <!--section Item selectione-->
+            <h6>{{ selectedItem.type }} sélectionné</h6>
+              <div class="fluid ui animated fade basic button" ng-click="showPopup()" tabindex="0">
+                <div class="visible content">
+                  <section ng-if="selectedItem.title != '' ">
+                    <div class="header">
+                      <a>{{ selectedItem.title }}</a>
+                    </div>
+                  </section>
+                  <section ng-if="selectedItem.title == '' ">
+                    <div class="meta">
+                      <a>{{ selectedItem.summary }}</a>
+                    </div>
+                  </section>
+                </div>
+                <div class="hidden content">
+                  <section ng-if="selectedItem.title != '' ">
+                    <div class="header">
+                      <c>{{ selectedItem.title }}</c>
+                    </div>
+                  </section>
+                  <section ng-if="selectedItem.title == '' ">
+                    <div class="meta">
+                      <c>{{ selectedItem.summary }}</c>
+                    </div>
+                  </section>
                 </div>
               </div>
-            </div>
 
-            <br /><br />
 
-            <h4>{{ selectedItem.type }}<span ng-if="similar_items.length > 1">s</span> similaire<span ng-if="similar_items.length > 1">s</span></h4>
-            <div class="ui cards">
-              <div class="card" ng-if="similar_items.length == 0">
+            <br /><div class="ui divider"></div>
+
+
+            <!--section Item similaire-->
+            <h6>{{ selectedItem.type }}<span ng-if="similar_items.length > 1">s</span> similaire<span ng-if="similar_items.length > 1">s</span></h6>
+
+              <div class="fluid ui basic button" ng-if="similar_items.length == 0">
                 <div class="content">
-                  Aucun {{ selectedItem.type }} similaire trouvé.
+                  <aucun>Aucun <lower>{{ selectedItem.type }}</lower> similaire trouvé.</aucun>
                 </div>
               </div>
-              <div class="card" ng-repeat="i in similar_items" ng-click="goSimilar(i.original)">
-                <div class="content">
-                  <div class="header">
-                    <a>{{ i.title }}</a>
+              <div ng-repeat="i in similar_items">
+                <div class="fluid ui animated fade basic button" ng-click="goSimilar(i.original)">
+                  <div class="visible content">
+                    <section ng-if="i.title != '' ">
+                      <div class="header">
+                        <a>{{ i.title }}</a>
+                      </div>
+                    </section>
+                    <section ng-if="i.title == '' ">
+                      <div class="meta">
+                        <a>{{ i.summary }}</a>
+                      </div>
+                    </section>
                   </div>
-                  <div class="meta">
-                    {{ i.summary }}
+                  <div class="hidden content">
+                    <section ng-if="i.title != '' ">
+                      <div class="header">
+                        <c>{{ i.title }}</c>
+                      </div>
+                    </section>
+                    <section ng-if="i.title == '' ">
+                      <div class="meta">
+                        <c>{{ i.summary }}</c>
+                      </div>
+                    </section>
                   </div>
                 </div>
+                <br />
               </div>
-            </div>
 
           </div>
 
-          <br /><div class="ui divider"></div>
 
-          <div ng-repeat="sheetType in real_document_type.sheetTypes">
-
-            <br />
-
-            <h4>{{ sheetType.name }}<span ng-if="entities[currentPage][sheetType.name].length > 1">s</span></h4><br />
-
-            <div class="ui cards scrollable">
-              <div class="card" ng-if="entities[currentPage][sheetType.name].length == 0">
-                <div class="content">
-                  Aucun {{ sheetType.name }} sur cette page.
-                </div>
-              </div>
-              <div class="card" ng-repeat="i in entities[currentPage][sheetType.name]" ng-click="goEntity(i)">
-                <div class="content">
-                  <div class="header">
-                    <a>{{ i.title }}</a>
-                  </div>
-                  <div class="meta">
-                    {{ i.summary }}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <br />
-
-          </div>
 
         </section>
 
+
+        <!--section connexion-->
         <section ng-if="user.loggedIn">
           <i ng-click="logoutUser()" class="Power large icon"></i>
           <i ng-click="admin()" class="lock large icon" ng-if="user.type == 'Administrator'"></i>
@@ -139,15 +209,20 @@
         <section ng-if="!user.loggedIn" ng-click="login()" style="cursor:pointer">
           <i class="Power large icon"></i>
           <a>
-            Se connecter héhé
+            Se connecter
           </a>
         </section>
       </nav>
+      <!-- fin barre latérale-->
+
+
     </div>
     <div class="pusher" id="content" ng-class="(addMode) ? 'crosshair':''">
 
       <h1 id="logo">Gutemberg</h1>
 
+
+      <!-- boutons de navigation en haut du document -->
       <nav>
 
         <a class="item" ng-click="showMenu = true" ng-hide="showMenu"><i class="Content large icon"></i></a>
@@ -158,11 +233,11 @@
                 ng-change="osd.goToPage(currentPage)">
         </select>
 
+
         <a id="btn-previous" data-content="Page précédente" class="item"><i class="Angle Left large icon"></i></a>
         <a id="btn-zoom-in" data-content="Agrandir" class="item"><i class="Plus large icon"></i></a>
         <a id="btn-zoom-out" data-content="Rétrécir" class="item"><i class="Minus large icon"></i></a>
         <a id="btn-next" data-content="Page suivante" class="item"><i class="Angle Right large icon"></i></a>
-        <a id="btn-add" ng-show="user.loggedIn" data-content="{{ (addMode) ? 'Quitter le mode d\'ajout' : 'Ajouter une fiche d\'annotation' }}" class="item" ng-click="toggleAddMode()"><i class="large icon" ng-class="(addMode) ? 'Cancel' : 'Write'"></i></a>
 
         <br /><br />
 
@@ -177,6 +252,8 @@
     </div>
   </div>
 
+
+  <!-- popup du bouton d'ajout de fiches -->
   <div id="addannotmodal" class="alert ui small modal transition">
 
     <div class="header">

@@ -1,0 +1,671 @@
+[
+	{
+		"name": "Registre paroissiaux",
+		"defaultContributor": "Gutemberg",
+		"sheetType":[
+			{
+				"name": "Première de page",
+				"fieldType":[
+					{
+						"name": "Nature des actes",
+						"required": true,
+						"type": "date",
+						"number": 1
+					},
+					{
+						"name": "Commune ou paroisse",
+						"required": true,
+						"type": "date",
+						"number": 1
+					},
+					{
+						"name": "Début de période",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Fin de période",
+						"required": true,
+						"type": "text",
+						"number": 1
+					}
+				]
+			},
+			{
+				"name": "Acte de naissance",
+				"fieldType":[
+					{
+						"name": "Commentaire",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Date de l'acte",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de l'acte",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de naissance",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom(s)",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s)",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Sexe",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom du père",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s) du père",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom de la mère",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s) de la mère",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Age du père",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Commune de naissance du père",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Age de la mère",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Commune de naissance de la mère",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			},
+			{
+				"name": "Acte de baptême",
+				"fieldType":[
+					{
+						"name": "Commentaire",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Date de l'acte",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de l'acte",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu du baptême",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom(s)",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s)",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Sexe",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom du père",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s) du père",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom de la mère",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s) de la mère",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Age du père",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Commune de naissance du père",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Age de la mère",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Commune de naissance de la mère",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s) du parrain",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom(s) du parrain",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s) de la marraine",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom(s) de la marraine",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			},
+			{
+				"name": "Acte d'adoption",
+				"fieldType":[
+					{
+						"name": "Commentaire",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Date de l'acte",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de l'acte",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de l'adoption",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom(s)",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s)",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Sexe",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom du père adoptif",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s) du père adoptif",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom de la mère adoptive",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s) de la mère adoptive",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Age du père adoptif",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Commune de naissance du père adoptif",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Age de la mère adoptive",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Commune de naissance de la mère adoptive",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+
+				]
+			},
+			{
+				"name": "Acte de mariage",
+				"fieldType":[
+					{
+						"name": "Commentaire",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Date de l'acte",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de l'acte",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu du mariage",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom(s) époux",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s) époux",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom(s) épouse",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s) épouse",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de naissance de l'époux",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de naissance de l'épouse",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Profession de l'époux",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Profession de l'épouse",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Age de l'époux",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Age de l'épouse",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+
+				]
+			},
+			{
+				"name": "Acte de divorce",
+				"fieldType":[
+					{
+						"name": "Commentaire",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Date de l'acte",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de l'acte",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu du divorce",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom(s) du divorcé",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s) du divorcé",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom(s) de la divorcée",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s) de la divorcée",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de naissance du divorcé",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de naissance de la divorcée",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Profession du divorcé",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Profession de la divorcée",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Age du divorcé",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Age de la divorcée",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+
+				]
+			},
+			{
+				"name": "Acte de décès",
+				"fieldType":[
+					{
+						"name": "Commentaire",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Date de l'acte",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de l'acte",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu du décès",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom(s)",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s)",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Sexe",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de naissance",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Profession",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Age",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+
+				]
+			},
+			{
+				"name": "Acte de sépulture",
+				"fieldType":[
+					{
+						"name": "Commentaire",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Date de l'acte",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de la sépulture",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu du décès",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom(s)",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s)",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Sexe",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de naissance",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Profession",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Age",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Date du décès",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Cause du décès",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+
+				]
+			}
+		]
+	}
+]

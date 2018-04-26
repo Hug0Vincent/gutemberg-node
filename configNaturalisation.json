@@ -19,7 +19,37 @@
 						"number": 1
 					},
 					{
-						"name": "Numero de dossier",
+						"name": "Lieu de résidence",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Profession",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de résidence épouse",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Profession épouse",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénoms",
+						"required": true,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Numéro du dossier",
 						"required": true,
 						"type": "text",
 						"number": 1

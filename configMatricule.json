@@ -4,29 +4,175 @@
 		"defaultContributor": "Gutemberg",
 		"sheetType":[
 			{
+				"name": "Matricule",
+				"fieldType":[
+					{
+						"name": "Matricule",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+			  ]
+	    },
+			{
+				"name": "Nom",
+				"fieldType":[
+					{
+						"name": "Prenom(s)",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Noms(s)",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Surnom(s)",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+	    },
+			{
+				"name": "Etat Civil",
+				"fieldType":[
+					{
+						"name": "Date de naissance",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Lieu de naissance",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Canton de naissance",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Résidence",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Canton de résidence",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Profession",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom du père",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s) du père",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nom de la mère",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Prénom(s) de la mère",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+	    },
+			{
+				"name": "Signalement",
+				"fieldType":[
+					{
+						"name": "Cheveux",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Sourcils",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Yeux",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Front",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Nez",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Bouche",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Taille",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			},
+			{
 				"name": "Fiche personnelle",
 				"fieldType":[
 					{
 						"name": "Matricule",
-						"required": true,
+						"required": false,
 						"type": "text",
 						"number": 1
 					},
 					{
 						"name": "Nom",
-						"required": true,
+						"required": false,
 						"type": "text",
 						"number": 1
 					},
 					{
 						"name": "Mobilisation",
-						"required": true,
+						"required": false,
 						"type": "text",
 						"number": 1
 					},
 					{
 						"name": "Etat civil",
-						"required": true,
+						"required": false,
 						"type": "text",
 						"number": 1
 					},
@@ -58,7 +204,7 @@
 						"name": "Informations",
 						"required": false,
 						"type": "text",
-						"number": -1
+						"number": 1
 					},
 					{
 						"name": "Habitation",
@@ -79,7 +225,86 @@
 						"number": 1
 					}
 				]
+			},
+			{
+				"name": "Affectation",
+				"fieldType":[
+					{
+						"name": "Armée active",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Armée de réserve",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Armée térritoriale",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			},
+			{
+				"name": "Domicile",
+				"fieldType":[
+					{
+						"name": "Date de début",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Date de fin",
+						"required": false,
+						"type": "text",
+						"number": 1
+					},
+					{
+						"name": "Commune",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			},
+			{
+				"name": "Secret gauche",
+				"fieldType":[
+					{
+						"name": "Commentaire",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			},
+			{
+				"name": "Conseil de révision",
+				"fieldType":[
+					{
+						"name": "Décision",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
+			},
+			{
+				"name": "Secret droit",
+				"fieldType":[
+					{
+						"name": "Commentaire",
+						"required": false,
+						"type": "text",
+						"number": 1
+					}
+				]
 			}
-		]
+    ]
 	}
 ]

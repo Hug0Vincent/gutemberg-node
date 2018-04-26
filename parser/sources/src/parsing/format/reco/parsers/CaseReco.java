@@ -25,23 +25,32 @@ public class CaseReco implements TagParser
 		types.put("caseEtatCivil","Etat civil");
 		types.put("caseSignalement","Signalement");
 		types.put("caseVideCanton","Canton");
-		types.put("caseVideDegre","Degré");
-		types.put("caseDecision","Décision");
+		types.put("caseVideDegre","DegrÃ©");
+		types.put("caseDecision","DÃ©cision");
 		types.put("caseInfos","Informations");
 		types.put("caseHabitation","Habitation");
 		types.put("caseSecretGauche","Secret gauche");
 		types.put("caseSecretDroite","Secret droit");
 	}
-	
+
 	public String parse(String text, Page page) throws IOException
 	{
 		int i = Parser.findIndex(text, '(');
-		//Récupère le type de l'élément
+		//Rï¿½cupï¿½re le type de l'ï¿½lï¿½ment
 		String type = text.substring(0, i-1);
-		
-		page.addNewFiche("Fiche personnelle");
+
+		page.addNewFiche("Matricule");
+		page.addNewFiche("Signalement");
+		page.addNewFiche("Nom");
+		page.addNewFiche("Affectation");
+		page.addNewFiche("Secret gauche");
+		page.addNewFiche("Secret droit");
+		page.addNewFiche("Conseil de rÃ©vision");
+		page.addNewFiche("Domicile");
+		page.addNewFiche("Etat civil");
+
 		page.setFieldType(types.get(type));
-		
+
 		page.newArticle();
 		text = text.substring(i);
 

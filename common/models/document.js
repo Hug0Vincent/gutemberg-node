@@ -506,6 +506,7 @@ module.exports = function(Document) {
 
   }
 
+// documents similaires
   Document.like = function(id, size, callback){
 
     var document_like = [];
@@ -573,6 +574,7 @@ module.exports = function(Document) {
     Annotation.search(text, undefined, size, checkIfValid);
   }
 
+// articles similaires
   Document.search_similar = function(type, text, size, callback){
 
     var Annotation = Document.app.models.Annotation;

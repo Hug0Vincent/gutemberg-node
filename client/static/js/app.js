@@ -115,6 +115,7 @@ app.run(function($rootScope, $http, localStorageService) {
     $http.post(API + tmp_user.type + 's/login', { email: tmp_user.email, password: tmp_user.password }).then(function(r) {
 
       $rootScope.auth_token = r.data.id;
+      console.log("test r datat id : " + r.data.id);
 
       $http.get(API + tmp_user.type + 's/' + r.data.userId + '?access_token=' + $rootScope.auth_token).then(function(ru) {
 
@@ -226,7 +227,7 @@ app.run(function($rootScope, $http, localStorageService) {
     */
 
     // first access_token
-    console.log($rootScope.user.email+" "+$rootScope.user.password);
+    console.log("mail : " + $rootScope.user.email+" password : "+$rootScope.user.password);
     $http.post(API + user_type + 's/login', { email: $rootScope.user.email, password: $rootScope.user.password }).then(function(r) {
 
       console.log("r "+r);
@@ -366,6 +367,7 @@ app.run(function($rootScope, $http, localStorageService) {
 
 
     $rootScope.auth_token = null;
+    //$rootScope.auth_token = $rootScope.user.loggedIn;
 
   }
 

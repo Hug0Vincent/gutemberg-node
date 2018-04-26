@@ -1,0 +1,191 @@
+<section id="admin">
+
+
+
+  <script src="../console-sham.js"></script>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+  <!--<script src="../bower_components/angular/angular.js"></script>-->
+
+  <script src="vendor/angular/angular-file-upload.min.js"></script>
+
+
+
+  <div class="ui bottom attached segment pushable">
+    <div class="ui left wide visible sidebar">
+      <nav id="menu">
+        <section>
+          <h2>Administration</h2>
+          <h2>
+            <a href="#!/admin"></i> Gérer les utilisateurs</a>
+          </h2>
+
+        </section>
+        <section>
+
+          <h3>
+            <a href="#!/"><i class="home large icon"></i> Retourner à l'accueil</a>
+          </h3>
+
+          <br />
+
+        </section>
+
+        <section ng-if="user.loggedIn">
+          <i ng-click="logoutAdmin()" class="Power large icon"></i>
+          <a id="profil">{{ user.name }}</a>
+        </section>
+        <section ng-if="!user.loggedIn" ng-click="login()" style="cursor:pointer">
+          <i class="Power large icon"></i>
+          <a>
+            Se connecter
+          </a>
+        </section>
+      </nav>
+    </div>
+    <div class="pusher" id="content"><div class="ui grid"><div class="twelve wide column">
+
+      <!-- 1. nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" // ng-controller="adminDocController"-->
+      <div class="ui segment">
+        <h4 class="ui header">Ajouter un nouveau document</h4>
+      <body nv-file-drop="" uploader="uploader" filters="jsonFilter, queueLimit, customFilter">
+
+          <div class="container">
+
+
+              <div class="row">
+
+                  <div class="col-md-3">
+
+                      <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
+                      Choisir un document
+                      <input type="file" nv-file-select="" uploader="uploader" filters="{jsonFilter}"/><br/>
+                    </div>
+
+                    <div class="col-md-5">
+                      Choisir les images tuilées associées au document
+                      <input type="file" nv-file-select="" uploader="uploader" />
+                    </div>
+
+
+
+                      <!-- <p>Queue length: {{ uploader.queue.length }}</p> -->
+
+                      <table class="table">
+                          <thead>
+                              <tr>
+                                  <th width="50%">Nom</th>
+                                  <th ng-show="uploader.isHTML5">Taille</th>
+                                  <th ng-show="uploader.isHTML5">Progression</th>
+                                  <th>Statut</th>
+                                  <th>Actions</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr ng-repeat="item in uploader.queue">
+                                  <td><strong>{{ item.file.name }}</strong></td>
+                                  <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                                  <td ng-show="uploader.isHTML5">
+                                      <div class="progress" style="margin-bottom: 0;">
+                                          <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                      </div>
+                                  </td>
+                                  <td class="text-center">
+                                      <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                      <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                      <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                                  </td>
+                                  <td nowrap>
+                                      <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                          <span class="glyphicon glyphicon-upload"></span> Upload
+                                      </button>
+                                      <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                                          <span class="glyphicon glyphicon-ban-circle"></span> Annuler
+                                      </button>
+                                      <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                          <span class="glyphicon glyphicon-trash"></span> Supprimer
+                                      </button>
+                                  </td>
+                              </tr>
+                          </tbody>
+
+                      </table>
+                      <button type="button" class="btn btn-success btn-s" ng-click="Document.multi_load_json('/home/gutemberg/dev/gutemberg-node/parser/datas/+{{item.Name}}')">
+                          <span class="glyphicon glyphicon-upload"></span> Importer le document
+                      </button>
+                  </div>
+
+              </div>
+            </body>
+          </div>
+
+
+
+
+
+
+    <div class="ui segment">
+      <body nv-file-drop="" uploader="uploaderConfig" filters="jsonFilter, queueLimit, customFilter">
+      <h4 class="ui header">Ajouter un nouveau type de document</h4>
+
+      <div class="col-md-3">
+
+          <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
+          Choisir un fichier de configuration
+          <input type="file" nv-file-select="" uploader="uploaderConfig" filters="{jsonFilter}"/>
+      </div>
+
+
+        <!--  <p>Queue length: {{ uploaderConfig.queue.length }}</p> -->
+
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th width="50%">Nom</th>
+                      <th ng-show="uploaderConfig.isHTML5">Taille</th>
+                      <th ng-show="uploaderConfig.isHTML5">Progression</th>
+                      <th>Statut</th>
+                      <th>Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="item in uploaderConfig.queue">
+                      <td><strong>{{ item.file.name }}</strong></td>
+                      <td ng-show="uploaderConfig.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                      <td ng-show="uploader.isHTML5">
+                          <div class="progress" style="margin-bottom: 0;">
+                              <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                          </div>
+                      </td>
+                      <td class="text-center">
+                          <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                          <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                          <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                      </td>
+                      <td nowrap>
+                          <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                              <span class="glyphicon glyphicon-upload"></span> Upload
+                          </button>
+                          <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                              <span class="glyphicon glyphicon-ban-circle"></span> Annuler
+                          </button>
+                          <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                              <span class="glyphicon glyphicon-trash"></span> Supprimer
+                          </button>
+                      </td>
+                  </tr>
+              </tbody>
+
+          </table>
+          <button type="button" class="btn btn-success btn-s" ng-click="load_config()">
+            <!-- <div ng-repeat="m in model"><a href="#" ng-click="call(m.func)">{{m.caption}}</a></div> -->
+              <span class="glyphicon glyphicon-upload"></span> Importer le fichier de configuration
+          </button>
+
+</body>
+  </div></div></div>
+  </div>
+  </div>
+
+</section>

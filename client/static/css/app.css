@@ -447,7 +447,7 @@ button:focus {
 }
 
 #admin #content .segment {
-  max-height: 25vh;
+  max-height: 35vh;
   overflow: auto;
 }
 

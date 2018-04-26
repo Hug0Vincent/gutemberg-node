@@ -795,65 +795,65 @@ $.fn.popup = function(parameters) {
               case 'top left':
                 positioning = {
                   top    : 'auto',
-                  bottom : screen.height,
-                  left   : 'auto',
-                  right  : screen.width
+                  bottom : parent.height - target.top + distanceAway,
+                  left   : target.left + offset,
+                  right  : 'auto'
                 };
               break;
               case 'top center':
                 positioning = {
+                  bottom : parent.height - target.top + distanceAway,
+                  left   : target.left + (target.width / 2) - (popup.width / 2) + offset,
                   top    : 'auto',
-                  bottom : screen.height,
-                  left   : 'auto',
-                  right  : screen.width
+                  right  : 'auto'
                 };
               break;
               case 'top right':
                 positioning = {
+                  bottom :  parent.height - target.top + distanceAway,
+                  right  :  parent.width - target.left - target.width - offset,
                   top    : 'auto',
-                  bottom : screen.height,
-                  left   : 'auto',
-                  right  : screen.width
+                  left   : 'auto'
                 };
               break;
               case 'left center':
                 positioning = {
-                  top    : 'auto',
-                  bottom : screen.height,
+                  top    : target.top + (target.height / 2) - (popup.height / 2) + offset,
+                  right  : parent.width - target.left + distanceAway,
                   left   : 'auto',
-                  right  : screen.width
+                  bottom : 'auto'
                 };
               break;
               case 'right center':
                 positioning = {
-                  top    : 'auto',
-                  bottom : screen.height,
-                  left   : 'auto',
-                  right  : screen.width
+                  top    : target.top + (target.height / 2) - (popup.height / 2) + offset,
+                  left   : target.left + target.width + distanceAway,
+                  bottom : 'auto',
+                  right  : 'auto'
                 };
               break;
               case 'bottom left':
                 positioning = {
-                  top    : 'auto',
-                  bottom : screen.height,
-                  left   : 'auto',
-                  right  : screen.width
+                  top    : target.top + target.height + distanceAway,
+                  left   : target.left + offset,
+                  bottom : 'auto',
+                  right  : 'auto'
                 };
               break;
               case 'bottom center':
                 positioning = {
-                  top    : 'auto',
-                  bottom : screen.height,
-                  left   : 'auto',
-                  right  : screen.width
+                  top    : target.top + target.height + distanceAway,
+                  left   : target.left + (target.width / 2) - (popup.width / 2) + offset,
+                  bottom : 'auto',
+                  right  : 'auto'
                 };
               break;
               case 'bottom right':
                 positioning = {
-                  top    : 'auto',
-                  bottom : screen.height,
+                  top    : target.top + target.height + distanceAway,
+                  right  : parent.width - target.left  - target.width - offset,
                   left   : 'auto',
-                  right  : screen.width
+                  bottom : 'auto'
                 };
               break;
             }
@@ -1317,7 +1317,7 @@ $.fn.popup.settings = {
   addTouchEvents : true,
 
   // default position relative to element
-  position       : 'bottom center',
+  position       : 'botton center',
 
   // name of variation to use
   variation      : '',

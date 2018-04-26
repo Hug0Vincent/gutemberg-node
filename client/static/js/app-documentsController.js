@@ -29,7 +29,7 @@ app.controller("documentsController", function($scope, $rootScope, $location, $r
   $scope.toSearch = "";
   $scope.entities = [];
   $scope.real_document_type = null;
-  var annot;
+  var annotslider;
 
 
   $('#helpSearch').popup();
@@ -862,7 +862,7 @@ app.directive('imageCheckbox', function() {
     console.log("visible");
     $('[aria-func=updateSlider]').off("click");
         $('[aria-func=updateSlider]').click(function(){
-          annot = maMap.get($(this)[0].id);
+          annotslider = maMap.get($(this)[0].id);
           $scope.updatePopup();
         })
     /** add delete sheet buttons event listeners */
@@ -1274,18 +1274,18 @@ $scope.popupContent = function() {
       html += `<div class="center aligned five wide column">
                 <a class=" header">${area.name}
                 </a>
-                <div class="fluid ui compact basic button" id="${ifield}${x}" aria-func="updateSlider">`;
+                <button class="fluid ui toggle compact button" tabindex="0" id="${ifield}${x}" aria-func="updateSlider">`;
 
 
         a = annots[0];
 
 
-        //prend les 20 premiers caractere d'une annotation et coupe en deux les mots de plus de 10 lettres
+        //prend les 8 premiers caractere d'une annotation (et coupe en deux les mots de plus de 6 lettres mais ça c'est enlevé)
         if (a != null){
           var str1 = a.text.substr(0, 8);
           if(a.text.length>8)str1+="..";
           var str2 = str1.charAt(0).toUpperCase() + str1.toLowerCase().slice(1);
-          var str2split = str2.split(" ");
+          /**var str2split = str2.split(" ");
           var str3 = "";
           var comptmota = 0;
           while(comptmota<str2split.length){
@@ -1296,18 +1296,18 @@ $scope.popupContent = function() {
               str3 += str2split[comptmota].substr(0, 6) + "- " + str2split[comptmota].slice(6) + " ";
             }
             comptmota++;
-          }
+          }*/
 
 
 
-          html += `${str3}
-                 </div>`;
+          html += `${str2}
+                 </button>`;
           if($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') html += `&nbsp;<a aria-func="deleteArea" aria-data="${area.id}"><font size="1">(Supprimer)</font></a>`;
 
                   html +=` </div>`;
         }
         else {
-                html += `</div>`;
+                html += `</button>`;
           if($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') html += `&nbsp;<a aria-func="deleteArea" aria-data="${area.id}"><font size="1">(Supprimer)</font></a>`;
                 html +=`</div>`;
         }
@@ -1315,9 +1315,8 @@ $scope.popupContent = function() {
        }
        if($rootScope.user.loggedIn && (sheetType.fieldTypes[ifield].number == -1 || sheetType.fieldTypes[ifield].number > selected.areas[selected.fieldTypes[ifield]].length)){
          html += `<div class="center aligned five wide column">
-                    <a class=" header">${selected.fieldTypes[ifield]}${(selected.areas[selected.fieldTypes[ifield]].length > 1) ? 's' : ''}
-                    </a>
-                    <div class="ui primary button" aria-func="addField" aria-data="${sheetType.fieldTypes[ifield].id}">Ajouter champ "${selected.fieldTypes[ifield]}"</div>
+         <a class="header">&nbsp </a>
+                    <div class="ui primary compact button" aria-func="addField" aria-data="${sheetType.fieldTypes[ifield].id}"><font size="2">Ajouter champ "${selected.fieldTypes[ifield]}"</font></div>
                   </div>`;
         }
   }
@@ -1327,22 +1326,23 @@ $scope.popupContent = function() {
               <div class="six wide column">
                 <div class="owl-carousel owl-theme">`;
 
-      for(var i in annot){
+      for(var i in annotslider){
             html += ` <div class="item" data-merge="1">
                         <b><font size="2">Interprétation n°${i+1}</font></b>
-                        <small> par ${(annot[i].username) ? annot[i].username : DOCUMENT_TYPES[$scope.document.type].defaultContributor}</small>`;
-
-if(annot[i].username && (($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') || ($rootScope.user.loggedIn && $rootScope.user.id == annot[i].userId))) html +=  `&nbsp;<a aria-func="deleteAnnot" aria-data="${annot[i].id}">(Supprimer)</a> `;
+                        <small> par ${(annotslider[i].username) ? annotslider[i].username : DOCUMENT_TYPES[$scope.document.type].defaultContributor}</small>`;
+if(annotslider[i].username && (($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') || ($rootScope.user.loggedIn && $rootScope.user.id == annotslider[i].userId))) html +=  `&nbsp;<a aria-func="deleteAnnot" aria-data="${annotslider[i].id}">(Supprimer)</a> `;
             html += `<div class="ui segment">
-                      <div><p>${annot[i].text}</p></div>
+                      <div><p>${annotslider[i].text}</p>
+                      </div>
                     </div>
                   </div>`;
+  /** systeme de notation a integrer sous <div><p>${annotslider[i].text}</p> et a rendre fonctionnelle
+  <div class="ui bottom left attached blue label"><small><i class="heart icon"></i>+${heart}</small> ng-click(heart+1)</div>*/
+
         }
-      
 
 
-
-      if($rootScope.user.loggedIn) html += `<form class="ui form"><strong>Ajouter une interprétation</strong>
+      if($rootScope.user.loggedIn) html += `<form class="ui form"><strong>Ajouter une interprétation pour ${selected.fieldTypes[ifield]}</strong>
                                               <div class="ui inline field">
                                                 <input type="${fieldType_type}" alt=""/>&nbsp;
                                                 <button class="ui primary button" aria-func="addAnnot" aria-data="${area.id}">Ajouter
@@ -1359,7 +1359,7 @@ if(annot[i].username && (($rootScope.user.type == 'Moderator' || $rootScope.user
         </div>
       </div>`;
 
-  if($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') html += `<a class="ui button" aria-func="deleteSheet" aria-data="${$scope.currentSheet.id}">Supprimer ${$scope.currentSheet.name}</a>`;
+  if($rootScope.user.type == 'Moderator' || $rootScope.user.type == 'Administrator') html += `<a class="ui red button" aria-func="deleteSheet" aria-data="${$scope.currentSheet.id}">Supprimer ${$scope.currentSheet.name}</a>`;
 
   return html + `<a class="ui button" onclick="$('.sheet').popup('hide');">Fermer</a>
   <script>
